@@ -5,6 +5,7 @@
 
 import {
   Text as DefaultText,
+  TextInput as DefaultTextInput,
   useColorScheme,
   View as DefaultView,
 } from "react-native";
@@ -31,6 +32,7 @@ type ThemeProps = {
 };
 
 export type TextProps = ThemeProps & DefaultText["props"];
+export type TextInputProps = ThemeProps & DefaultTextInput["props"];
 export type ViewProps = ThemeProps & DefaultView["props"];
 
 export function Text(props: TextProps) {
@@ -38,6 +40,13 @@ export function Text(props: TextProps) {
   const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
 
   return <DefaultText style={[{ color }, style]} {...otherProps} />;
+}
+
+export function TextInput(props: TextInputProps) {
+  const { style, lightColor, darkColor, ...otherProps } = props;
+  const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
+
+  return <DefaultTextInput style={[{ color }, style]} {...otherProps} />;
 }
 
 export function View(props: ViewProps) {
