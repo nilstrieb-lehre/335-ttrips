@@ -1,12 +1,12 @@
 import { StyleSheet } from "react-native";
 
-import { Text, View } from "../../components/Themed";
-import { Redirect } from "expo-router";
+import { View } from "../../components/Themed";
+import CurrentTrip from "../../components/current-trip/CurrentTrip";
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Redirect href="/new-trip" />
+      <CurrentTrip />
     </View>
   );
 }

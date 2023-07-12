@@ -1,18 +1,22 @@
 import React from "react";
-import { StyleSheet } from "react-native";
-import { TextInput, View } from "../Themed";
+import { Button, StyleSheet } from "react-native";
+import { View } from "../Themed";
 import { PredefinedLocation } from "./PredefinedLocation";
 import SearchLocation from "./SearchLocation";
 import CurrentLocation from "./CurrentLocation";
 
-const Location = () => {
+type Props = {
+  setLocation: (location: string) => void;
+};
+
+const Location = ({ setLocation }: Props) => {
   return (
     <View>
-      <SearchLocation />
+      <SearchLocation setLocation={setLocation} />
       <CurrentLocation />
       <View style={styles.predefined}>
-        <PredefinedLocation name="home" />
-        <PredefinedLocation name="work" />
+        <PredefinedLocation name="Schaffhausen" setLocation={setLocation} />
+        <PredefinedLocation name="Winterthur" setLocation={setLocation} />
       </View>
     </View>
   );

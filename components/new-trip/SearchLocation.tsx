@@ -9,7 +9,11 @@ import {
 import { Text, TextInput } from "../Themed";
 import { Location, locations } from "../../service/transport";
 
-const SearchLocation = () => {
+type Props = {
+  setLocation: (location: string) => void;
+};
+
+const SearchLocation = ({ setLocation }: Props) => {
   const [query, setQuery] = useState("");
   const [stations, setStations] = useState<Location[]>([]);
 
@@ -33,7 +37,7 @@ const SearchLocation = () => {
             data={stations}
             renderItem={({ item }) => (
               <View>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setLocation(item.name)}>
                   <Text>{item.name}</Text>
                 </TouchableOpacity>
               </View>

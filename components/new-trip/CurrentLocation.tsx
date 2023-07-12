@@ -4,7 +4,7 @@ import { Button, StyleSheet, View } from "react-native";
 const CurrentLocation = () => {
   return (
     <View>
-      <Button title="Use current location" />
+      <Button title="Use current location" onPress={() => alert("no!")} />
     </View>
   );
 };
