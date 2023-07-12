@@ -1,4 +1,4 @@
-[# SBB-App
+# SBB-App
 
 - Für den User optionales Login mit Firebase
 - Speichern von Orten in Firebase
