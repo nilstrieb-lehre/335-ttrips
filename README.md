@@ -4,8 +4,8 @@
 - Speichern von Orten in Firebase
 - Mit Magnetometer die Richtung zum Bahnhof anzeigen
 - Wetter API integrieren
-    - Wetter am Zielort anzeigen
-    - Orte mit bestimmten Wetter anzeigen
+  - Wetter am Zielort anzeigen
+  - Orte mit bestimmten Wetter anzeigen
 
 ## Trips suchen und starten
 
@@ -25,7 +25,6 @@ eine Push-Notification, wenn man bald am Zielbahnhof ankommt.
 
 - GPS für aktuelle Position
 - Magnetometer um die Richtung zum Bahnhof anzuzeigen
-
 
 ## Ressourcen
 
