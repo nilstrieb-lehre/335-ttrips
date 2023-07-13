@@ -1,11 +1,18 @@
 import { Connection } from "./transport";
-import useAsyncStorage from "./use-async-storage";
+import React, { useContext } from "react";
 
-function useCurrentTrip(): [
-  Connection | null,
-  (trip: Connection | null) => void,
-] {
-  return useAsyncStorage<Connection | null>("current-trip", null);
+export type CurrentTrip = {
+  currentTrip: Connection | null;
+  setCurrentTrip: (trip: Connection | null) => void;
+};
+
+export const CurrentTripContext = React.createContext<CurrentTrip>({
+  currentTrip: null,
+  setCurrentTrip: console.error,
+});
+
+function useCurrentTrip(): CurrentTrip {
+  return useContext(CurrentTripContext);
 }
 
 export default useCurrentTrip;

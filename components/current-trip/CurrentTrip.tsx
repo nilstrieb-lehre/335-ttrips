@@ -4,7 +4,7 @@ import { Link, Text } from "../Themed";
 import useCurrentTrip from "../../service/use-current-trip";
 
 const CurrentTrip = () => {
-  const [currentTrip, setCurrentTrip] = useCurrentTrip();
+  const { currentTrip } = useCurrentTrip();
   return (
     <View>
       {currentTrip ? (

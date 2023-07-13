@@ -4,13 +4,14 @@ import { Connection } from "../../service/transport";
 import { Text } from "../Themed";
 import { renderDate } from "../../service/utils";
 import useCurrentTrip from "../../service/use-current-trip";
+import { router } from "expo-router";
 
 type Props = {
   trips: Connection[];
 };
 
 const TripList = ({ trips }: Props) => {
-  const [_currentTrip, setCurrentTrip] = useCurrentTrip();
+  const { setCurrentTrip } = useCurrentTrip();
 
   return (
     <View style={styles.container}>
@@ -19,7 +20,13 @@ const TripList = ({ trips }: Props) => {
         data={trips}
         renderItem={({ item }) => (
           <View>
-            <TouchableOpacity onPress={() => setCurrentTrip(item)}>
+            <TouchableOpacity
+              onPress={() => {
+                setCurrentTrip(item);
+                // Go to the current trip
+                router.replace("/");
+              }}
+            >
               <Text>
                 {item.from.station.name} - {item.to.station.name}
               </Text>
