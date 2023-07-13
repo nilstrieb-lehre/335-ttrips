@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
 import { Connection } from "../../service/transport";
 import { Text } from "../Themed";
@@ -6,25 +6,56 @@ import { tripToStopStations } from "../../service/tripping";
 import { renderDate } from "../../service/utils";
 
 const TripProgress = ({ currentTrip }: { currentTrip: Connection }) => {
-  const stations = tripToStopStations(currentTrip);
+  const [[stations, currentPosition], setStations] = useState(
+    tripToStopStations(currentTrip),
+  );
+
+  console.log(currentPosition);
+
+  useEffect(() => {
+    const timer = setInterval(
+      () => setStations(tripToStopStations(currentTrip)),
+      10_000,
+    );
+
+    return () => clearInterval(timer);
+  });
 
   return (
     <ScrollView style={styles.container}>
-      {stations.map((station, idx) => (
-        <View style={styles.station} key={idx}>
-          <View style={styles.times}>
-            <Text>{station.arrival && renderDate(station.arrival)}</Text>
-            <Text>{station.departure && renderDate(station.departure)}</Text>
+      {stations.map((station, idx) => {
+        const isAtStation =
+          currentPosition.type === "AtStation" &&
+          currentPosition.stationIndex === idx;
+
+        const isBeforeStation =
+          currentPosition.type === "EnRoute" &&
+          currentPosition.beforeStationIndex === idx;
+
+        return (
+          <View
+            style={[
+              styles.station,
+              isBeforeStation ? { borderTopColor: "red" } : {},
+            ]}
+            key={idx}
+          >
+            <View style={styles.times}>
+              <Text>{station.arrival && renderDate(station.arrival)}</Text>
+              <Text>{station.departure && renderDate(station.departure)}</Text>
+            </View>
+            <View style={styles.name}>
+              <Text style={isAtStation ? { color: "red" } : {}}>
+                {station.station.name}
+              </Text>
+            </View>
+            <View style={styles.platforms}>
+              <Text>{station.arrivalPlatform}</Text>
+              <Text>{station.departurePlatform}</Text>
+            </View>
           </View>
-          <View style={styles.name}>
-            <Text>{station.station.name}</Text>
-          </View>
-          <View style={styles.platforms}>
-            <Text>{station.arrivalPlatform}</Text>
-            <Text>{station.departurePlatform}</Text>
-          </View>
-        </View>
-      ))}
+        );
+      })}
     </ScrollView>
   );
 };

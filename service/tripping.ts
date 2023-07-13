@@ -35,32 +35,95 @@ export type StopStation = {
   departurePlatform: string | null;
 };
 
-export function tripToStopStations(trip: Connection): StopStation[] {
-  const date = (date: string | null) => (date ? new Date(date) : null);
+export type CurrentPosition =
+  | {
+      type: "AtStation";
+      stationIndex: number;
+    }
+  | { type: "EnRoute"; beforeStationIndex: number };
 
-  const stations: StopStation[] = [
-    {
-      station: trip.from.station,
-      arrival: null,
-      arrivalPlatform: null,
-      departure: date(trip.from.departure),
-      departurePlatform: trip.from.platform,
-    },
-  ];
+const date = (date: string | null) => (date ? new Date(date) : null);
 
-  for (const section of trip.sections) {
-    stations[stations.length - 1].departure = date(section.departure.departure);
-    stations[stations.length - 1].departurePlatform =
-      section.departure.platform;
+class StationListBuilder {
+  stations: StopStation[];
+  currentPosition: CurrentPosition;
+  now: Date;
 
-    stations.push({
-      station: section.arrival.station,
-      arrival: date(section.arrival.arrival),
-      arrivalPlatform: section.arrival.platform,
+  constructor(from: Stop) {
+    this.stations = [
+      {
+        station: from.station,
+        arrival: null,
+        arrivalPlatform: null,
+        departure: date(from.departure),
+        departurePlatform: from.platform,
+      },
+    ];
+    // Initially, we are at the first station.
+    this.currentPosition = {
+      type: "AtStation",
+      stationIndex: 0,
+    };
+    this.now = new Date();
+  }
+
+  /**
+   * Patches up the last station to set the departure for the next section.
+   * @param departure The departure of the current section, an existing station.
+   */
+  addDeparture(departure: Stop) {
+    const time = date(departure.departure);
+
+    this.stations[this.stations.length - 1].departure = time;
+    this.stations[this.stations.length - 1].departurePlatform =
+      departure.platform;
+
+    if (time && time < this.now) {
+      // We are past this departure, so we are currently en route towards the station we will
+      // add next. Or we're done.
+      this.currentPosition = {
+        type: "EnRoute",
+        beforeStationIndex: this.stations.length,
+      };
+    }
+  }
+
+  /**
+   * Add a new arrival for a section. This adds the new station.
+   * @param arrival The arrival for this section.
+   */
+  addArrival(arrival: Stop) {
+    const time = date(arrival.arrival);
+
+    const addedStation = this.stations.length;
+
+    this.stations.push({
+      station: arrival.station,
+      arrival: time,
+      arrivalPlatform: arrival.platform,
       departure: null,
       departurePlatform: null,
     });
+
+    if (time && time < this.now) {
+      // We have arrived the station, so we are currently at that station.
+      this.currentPosition = {
+        type: "AtStation",
+        stationIndex: addedStation,
+      };
+    }
+  }
+}
+
+export function tripToStopStations(
+  trip: Connection,
+): [StopStation[], CurrentPosition] {
+  const builder = new StationListBuilder(trip.from);
+
+  for (const section of trip.sections) {
+    builder.addDeparture(section.departure);
+    builder.addArrival(section.arrival);
   }
 
-  return stations;
+  return [builder.stations, builder.currentPosition];
 }

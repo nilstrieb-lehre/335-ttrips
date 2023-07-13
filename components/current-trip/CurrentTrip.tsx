@@ -14,7 +14,7 @@ const TripInfo = ({ currentTrip }: { currentTrip: Connection }) => {
     <View style={styles.container}>
       <View>
         <Text style={styles.title}>
-          {currentTrip.from.station.name} -&gt; {currentTrip.to.station.name}
+          {currentTrip.from.station.name} → {currentTrip.to.station.name}
         </Text>
       </View>
       {next && <StationCompass nextStation={next.station.coordinate} />}
