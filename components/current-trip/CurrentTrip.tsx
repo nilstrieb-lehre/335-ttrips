@@ -1,7 +1,9 @@
 import React from "react";
-import { FlatList, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { Link, Text } from "../Themed";
 import useCurrentTrip from "../../service/use-current-trip";
+import { nextStop } from "../../service/tripping";
+import StationCompass from "./StationCompass";
 
 const CurrentTrip = () => {
   const { currentTrip } = useCurrentTrip();
@@ -9,26 +11,22 @@ const CurrentTrip = () => {
     <View>
       {currentTrip ? (
         <View>
-          <Text>{currentTrip.from.station.name}</Text>
-          <Text>{currentTrip.to.station.name}</Text>
-          <FlatList
-            data={currentTrip.sections}
-            renderItem={({ item }) => (
-              <View>
-                <Text>
-                  {item.departure.station.name} to {item.arrival.station.name}
-                </Text>
-              </View>
-            )}
-          />
+          <View>
+            <Text>
+              {currentTrip.from.station.name} to {currentTrip.to.station.name}
+            </Text>
+            <Text>
+              Next stop: {nextStop(currentTrip)?.station.name ?? "unknown"}
+            </Text>
+          </View>
+          <StationCompass />
         </View>
       ) : (
         <View>
           <Text>No current trip.</Text>
           <Link href="/new-trip">
-            <Text>whaaat</Text>
+            <Text>Create new trip</Text>
           </Link>
-          <Text>No current trip.</Text>
         </View>
       )}
     </View>
