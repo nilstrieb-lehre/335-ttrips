@@ -5,21 +5,20 @@ import useCurrentTrip from "../../service/use-current-trip";
 import { nextStop } from "../../service/tripping";
 import StationCompass from "./StationCompass";
 import { Connection } from "../../service/transport";
+import TripProgress from "./TripProgress";
 
 const TripInfo = ({ currentTrip }: { currentTrip: Connection }) => {
   const next = nextStop(currentTrip);
 
   return (
-    <View>
+    <View style={styles.container}>
       <View>
-        <Text>
-          {currentTrip.from.station.name} to {currentTrip.to.station.name}
-        </Text>
-        <Text>
-          Next stop: {nextStop(currentTrip)?.station.name ?? "unknown"}
+        <Text style={styles.title}>
+          {currentTrip.from.station.name} -&gt; {currentTrip.to.station.name}
         </Text>
       </View>
       {next && <StationCompass nextStation={next.station.coordinate} />}
+      <TripProgress currentTrip={currentTrip} />
     </View>
   );
 };
@@ -43,6 +42,16 @@ const CurrentTrip = () => {
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    paddingTop: 20,
+  },
+  title: {
+    fontSize: 15,
+    marginBottom: 5,
+  },
+});
 
 export default CurrentTrip;
