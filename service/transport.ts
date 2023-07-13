@@ -8,7 +8,7 @@ export type Location = {
   type: "station" | "poi" | "address" | "refine";
   name: string;
   score: number | null;
-  coordinates: Coordinate;
+  coordinate: Coordinate;
   distance: number | null;
 };
 

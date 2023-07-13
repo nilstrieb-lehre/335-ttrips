@@ -21,7 +21,7 @@ const SearchLocation = ({ setLocation }: Props) => {
     if (!query) {
       return;
     }
-    console.log("search");
+
     locations({ query })
       .then((res) => setStations(res.stations))
       .catch(console.error);
