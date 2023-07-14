@@ -88,6 +88,7 @@ const StationCompass = ({ nextStation }: Props) => {
         <Text>errorMessage</Text>
       ) : (
         <View style={styles.container}>
+          <View style={styles.compassBackground} />
           <Image
             source={require("../../assets/images/compass_bg.png")}
             style={[
@@ -123,6 +124,14 @@ const StationCompass = ({ nextStation }: Props) => {
 
 const styles = StyleSheet.create({
   container: {},
+  compassBackground: {
+    position: "absolute",
+    backgroundColor: "black",
+    height: width - COMPASS_MARGIN + 10,
+    width: width - COMPASS_MARGIN + 10,
+    marginLeft: COMPASS_MARGIN / 2,
+    borderRadius: 50,
+  },
   background: {
     resizeMode: "contain",
   },

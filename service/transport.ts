@@ -61,7 +61,7 @@ export type LocationsResponse = {
   stations: Location[];
 };
 
-const BASE = "http://transport.opendata.ch/v1";
+const BASE = "https://transport.opendata.ch/v1";
 
 export async function locations(
   params?: LocationsParams,
