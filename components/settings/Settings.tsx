@@ -14,6 +14,8 @@ import sharedStyles from "../../constants/sharedStyles";
 import { CredentialsContext, firebase } from "../../service/firebase";
 import { useBackground } from "../../service/utils";
 import { Text, TextInput } from "../Themed";
+import debounce from "../../service/debounce";
+import { Location, locations as getLocations } from "../../service/transport";
 
 type LocationProps = {
   filled: boolean;
@@ -21,7 +23,7 @@ type LocationProps = {
   onPress: () => void;
 };
 
-const Location = ({ filled, name, onPress }: LocationProps) => {
+const LocationDisplay = ({ filled, name, onPress }: LocationProps) => {
   const backgroundColor = useBackground();
   const colorScheme = useColorScheme();
   return (
@@ -53,23 +55,30 @@ const Settings = ({ credentials }: { credentials: UserCredential }) => {
   const [newLocation, setNewLocation] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [searchModeActive, setSearchModeActive] = useState(false);
+  const [search, setSearch] = useState("");
+  const [searchResults, setSearchResults] = useState<Location[]>([]);
 
-  const backgroundColor = useBackground();
+  const handleSearchChange = debounce((val) => setSearch(val), 500);
 
   useEffect(() => {
     const unsub = firebase.listenLocations(credentials.user.uid, setLocations);
     return () => unsub();
   }, []);
 
-  const addLocation = () => {
-    if (!newLocation) {
-      return;
-    }
+  useEffect(() => {
+    getLocations({ query: search }).then((res) =>
+      setSearchResults(res.stations),
+    );
+  }, [search]);
+
+  const addLocation = (item: Location) => {
     setError(null);
-    const updated = [...locations, newLocation.trim()];
+    const updated = [...locations, item.name];
+    console.log("called");
+    setNewLocation("");
+    setSearchModeActive(false);
     firebase
       .setLocations(credentials.user.uid, updated)
-      .then(() => setNewLocation(""))
       .catch(() => setError("An error occurred when adding a location"));
   };
 
@@ -83,7 +92,7 @@ const Settings = ({ credentials }: { credentials: UserCredential }) => {
   };
 
   const renderLocation = ({ item, index }: { item: string; index: number }) => (
-    <Location filled name={item} onPress={() => removeLocation(index)} />
+    <LocationDisplay filled name={item} onPress={() => removeLocation(index)} />
   );
 
   return (
@@ -99,21 +108,38 @@ const Settings = ({ credentials }: { credentials: UserCredential }) => {
           <TextInput
             value={newLocation}
             onFocus={() => setSearchModeActive(true)}
-            onBlur={() => setSearchModeActive(false)}
-            onChangeText={setNewLocation}
+            onChangeText={(val) => {
+              handleSearchChange(val);
+              setNewLocation(val);
+            }}
             accessibilityLabel="Add new Location"
             style={[sharedStyles.input, { width: "100%" }]}
           />
           {error && <Text>{error}</Text>}
         </View>
 
-        {!searchModeActive && (
+        {!searchModeActive ? (
           <>
             <Text style={[sharedStyles.title, { marginTop: 15 }]}>
               Saved locations
             </Text>
             <FlatList data={locations} renderItem={renderLocation} />
           </>
+        ) : (
+          <FlatList
+            data={searchResults}
+            renderItem={({ item, index }) => (
+              <LocationDisplay
+                key={index}
+                name={item.name}
+                filled={false}
+                onPress={() => {
+                  console.log("called");
+                  addLocation(item);
+                }}
+              />
+            )}
+          />
         )}
       </View>
     </View>
@@ -142,7 +168,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     flex: 1,
     flexDirection: "row",
-    width: "100%",
+    maxWidth: "100%",
     alignItems: "center",
   },
   footer: {

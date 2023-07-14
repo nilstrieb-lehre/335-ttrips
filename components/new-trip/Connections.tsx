@@ -46,9 +46,9 @@ const Connections = ({ data }: ConnectionsProps) => {
     const points: React.ReactNode[] = sectionsWithoutWalk
       .slice(0, sectionsWithoutWalk.length - 1)
       .map(mapPointToPosition)
-      .map((left) => (
+      .map((left, index) => (
         <View
-          key={left}
+          key={index}
           style={[
             styles.stationPointsAbsolute,
             { left, backgroundColor: searchStationForeground },
