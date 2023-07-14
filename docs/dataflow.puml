@@ -1,0 +1,31 @@
+@startuml
+
+[firebase]
+
+[context]
+
+[new trip]
+
+[current trip]
+
+[settings]
+
+[asyncstorage]
+
+[transport API]
+
+[firebase] --> "locations" [new trip]
+[settings] --> "locations" [firebase]
+
+[firebase] --> "user info" [settings]
+[settings] --> "user info" [context]
+
+[new trip] --> "current trip" [context]
+[context] --> "current trip" [current trip]
+
+[context] --> "current trip" [asyncstorage]
+[asyncstorage] --> "current trip" [context]
+
+[transport API] ---> "connections" [new trip]
+
+@enduml
