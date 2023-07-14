@@ -14,6 +14,7 @@ dann bei der Ortssuche ganz einfach auswählen kann.
 ## Persistenz-Lösung
 
 Wir nutzen zwei Arten von Persistenz:
+
 - AsyncStorage für die aktuelle Reise
 - Firebase für die Settings
 
