@@ -1,0 +1,2312 @@
+{
+  "from": {
+    "station": {
+      "id": "8509075",
+      "name": "Davos Frauenkirch",
+      "score": null,
+      "coordinate": {
+        "type": "WGS84",
+        "x": 46.766596,
+        "y": 9.799247
+      },
+      "distance": null
+    },
+    "arrival": null,
+    "arrivalTimestamp": null,
+    "departure": "2023-07-14T14:36:00+0200",
+    "departureTimestamp": 1689338160,
+    "delay": null,
+    "platform": null,
+    "prognosis": {
+      "platform": null,
+      "arrival": null,
+      "departure": null,
+      "capacity1st": null,
+      "capacity2nd": null
+    },
+    "realtimeAvailability": null,
+    "location": {
+      "id": "8509075",
+      "name": "Davos Frauenkirch",
+      "score": null,
+      "coordinate": {
+        "type": "WGS84",
+        "x": 46.766596,
+        "y": 9.799247
+      },
+      "distance": null
+    }
+  },
+  "to": {
+    "station": {
+      "id": "8587061",
+      "name": "Genève, Rive",
+      "score": null,
+      "coordinate": {
+        "type": "WGS84",
+        "x": 46.201881,
+        "y": 6.152792
+      },
+      "distance": null
+    },
+    "arrival": "2023-07-14T20:33:00+0200",
+    "arrivalTimestamp": 1689359580,
+    "departure": null,
+    "departureTimestamp": null,
+    "delay": null,
+    "platform": null,
+    "prognosis": {
+      "platform": null,
+      "arrival": null,
+      "departure": null,
+      "capacity1st": null,
+      "capacity2nd": null
+    },
+    "realtimeAvailability": null,
+    "location": {
+      "id": "8587061",
+      "name": "Genève, Rive",
+      "score": null,
+      "coordinate": {
+        "type": "WGS84",
+        "x": 46.201881,
+        "y": 6.152792
+      },
+      "distance": null
+    }
+  },
+  "duration": "00d05:57:00",
+  "transfers": 4,
+  "service": null,
+  "products": ["301", "RE", "IC 3", "IC 1", "8"],
+  "capacity1st": null,
+  "capacity2nd": null,
+  "sections": [
+    {
+      "journey": null,
+      "walk": {
+        "duration": null
+      },
+      "departure": {
+        "station": {
+          "id": "8509075",
+          "name": "Davos Frauenkirch",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.766596,
+            "y": 9.799247
+          },
+          "distance": null
+        },
+        "arrival": null,
+        "arrivalTimestamp": null,
+        "departure": "2023-07-14T14:36:00+0200",
+        "departureTimestamp": 1689338160,
+        "delay": null,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8509075",
+          "name": "Davos Frauenkirch",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.766596,
+            "y": 9.799247
+          },
+          "distance": null
+        }
+      },
+      "arrival": {
+        "station": {
+          "id": "8581178",
+          "name": "Davos Frauenkirch, Landhaus",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.76702,
+            "y": 9.79916
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T14:38:00+0200",
+        "arrivalTimestamp": 1689338280,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": null,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8581178",
+          "name": "Davos Frauenkirch, Landhaus",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.76702,
+            "y": 9.79916
+          },
+          "distance": null
+        }
+      }
+    },
+    {
+      "journey": {
+        "name": "000200",
+        "category": "B",
+        "subcategory": null,
+        "categoryCode": null,
+        "number": "301",
+        "operator": "VBD",
+        "to": "Davos Laret, Landhaus",
+        "passList": [
+          {
+            "station": {
+              "id": "8581178",
+              "name": "Davos Frauenkirch, Landhaus",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.76702,
+                "y": 9.79916
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:38:00+0200",
+            "arrivalTimestamp": 1689338280,
+            "departure": "2023-07-14T14:38:00+0200",
+            "departureTimestamp": 1689338280,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:38:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8581178",
+              "name": "Davos Frauenkirch, Landhaus",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.76702,
+                "y": 9.79916
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8574833",
+              "name": "Davos Frauenkirch, Gadenstatt",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.770289,
+                "y": 9.800378
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:38:00+0200",
+            "arrivalTimestamp": 1689338280,
+            "departure": "2023-07-14T14:38:00+0200",
+            "departureTimestamp": 1689338280,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:38:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8574833",
+              "name": "Davos Frauenkirch, Gadenstatt",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.770289,
+                "y": 9.800378
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8574832",
+              "name": "Davos Platz, Islen",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.778734,
+                "y": 9.807586
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:39:00+0200",
+            "arrivalTimestamp": 1689338340,
+            "departure": "2023-07-14T14:39:00+0200",
+            "departureTimestamp": 1689338340,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:39:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8574832",
+              "name": "Davos Platz, Islen",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.778734,
+                "y": 9.807586
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8574831",
+              "name": "Davos Platz, Crestannes",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.783099,
+                "y": 9.810634
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:40:00+0200",
+            "arrivalTimestamp": 1689338400,
+            "departure": "2023-07-14T14:40:00+0200",
+            "departureTimestamp": 1689338400,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:40:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8574831",
+              "name": "Davos Platz, Crestannes",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.783099,
+                "y": 9.810634
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8574830",
+              "name": "Davos Platz, Spital",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.787828,
+                "y": 9.813883
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:44:00+0200",
+            "arrivalTimestamp": 1689338640,
+            "departure": "2023-07-14T14:44:00+0200",
+            "departureTimestamp": 1689338640,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:44:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8574830",
+              "name": "Davos Platz, Spital",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.787828,
+                "y": 9.813883
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8592606",
+              "name": "Davos Platz, Tanzbühl",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.7908,
+                "y": 9.817656
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:45:00+0200",
+            "arrivalTimestamp": 1689338700,
+            "departure": "2023-07-14T14:45:00+0200",
+            "departureTimestamp": 1689338700,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:45:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8592606",
+              "name": "Davos Platz, Tanzbühl",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.7908,
+                "y": 9.817656
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8592605",
+              "name": "Davos Platz, Postplatz",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.793387,
+                "y": 9.820902
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:46:00+0200",
+            "arrivalTimestamp": 1689338760,
+            "departure": "2023-07-14T14:46:00+0200",
+            "departureTimestamp": 1689338760,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:46:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8592605",
+              "name": "Davos Platz, Postplatz",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.793387,
+                "y": 9.820902
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8592604",
+              "name": "Davos Platz, Schatzalpbahn",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.797117,
+                "y": 9.822024
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:47:00+0200",
+            "arrivalTimestamp": 1689338820,
+            "departure": "2023-07-14T14:47:00+0200",
+            "departureTimestamp": 1689338820,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:47:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8592604",
+              "name": "Davos Platz, Schatzalpbahn",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.797117,
+                "y": 9.822024
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8592603",
+              "name": "Davos Platz, Sportzentrum",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.799247,
+                "y": 9.824739
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:48:00+0200",
+            "arrivalTimestamp": 1689338880,
+            "departure": "2023-07-14T14:48:00+0200",
+            "departureTimestamp": 1689338880,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:48:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8592603",
+              "name": "Davos Platz, Sportzentrum",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.799247,
+                "y": 9.824739
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8592602",
+              "name": "Davos Platz, Kongresszentrum",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.801343,
+                "y": 9.828646
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:49:00+0200",
+            "arrivalTimestamp": 1689338940,
+            "departure": "2023-07-14T14:49:00+0200",
+            "departureTimestamp": 1689338940,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:49:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8592602",
+              "name": "Davos Platz, Kongresszentrum",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.801343,
+                "y": 9.828646
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8592601",
+              "name": "Davos Platz, Horlauben",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.801366,
+                "y": 9.832697
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:50:00+0200",
+            "arrivalTimestamp": 1689339000,
+            "departure": "2023-07-14T14:50:00+0200",
+            "departureTimestamp": 1689339000,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:50:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8592601",
+              "name": "Davos Platz, Horlauben",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.801366,
+                "y": 9.832697
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8592600",
+              "name": "Davos Dorf, Schiabach",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.803091,
+                "y": 9.836273
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:51:00+0200",
+            "arrivalTimestamp": 1689339060,
+            "departure": "2023-07-14T14:51:00+0200",
+            "departureTimestamp": 1689339060,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:51:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8592600",
+              "name": "Davos Dorf, Schiabach",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.803091,
+                "y": 9.836273
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8592599",
+              "name": "Davos Dorf, Dischmastrasse",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.806227,
+                "y": 9.837396
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:52:00+0200",
+            "arrivalTimestamp": 1689339120,
+            "departure": "2023-07-14T14:52:00+0200",
+            "departureTimestamp": 1689339120,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:52:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8592599",
+              "name": "Davos Dorf, Dischmastrasse",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.806227,
+                "y": 9.837396
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8592598",
+              "name": "Davos Dorf, Parsennbahn",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.808765,
+                "y": 9.839108
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:53:00+0200",
+            "arrivalTimestamp": 1689339180,
+            "departure": "2023-07-14T14:53:00+0200",
+            "departureTimestamp": 1689339180,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:53:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8592598",
+              "name": "Davos Dorf, Parsennbahn",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.808765,
+                "y": 9.839108
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8574848",
+              "name": "Davos Dorf, Bahnhof",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.809753,
+                "y": 9.84176
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:56:00+0200",
+            "arrivalTimestamp": 1689339360,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": "2023-07-14T14:56:00+0200",
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8574848",
+              "name": "Davos Dorf, Bahnhof",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.809753,
+                "y": 9.84176
+              },
+              "distance": null
+            }
+          }
+        ],
+        "capacity1st": null,
+        "capacity2nd": null
+      },
+      "walk": null,
+      "departure": {
+        "station": {
+          "id": "8581178",
+          "name": "Davos Frauenkirch, Landhaus",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.76702,
+            "y": 9.79916
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T14:38:00+0200",
+        "arrivalTimestamp": 1689338280,
+        "departure": "2023-07-14T14:38:00+0200",
+        "departureTimestamp": 1689338280,
+        "delay": 0,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": "2023-07-14T14:38:00+0200",
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8581178",
+          "name": "Davos Frauenkirch, Landhaus",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.76702,
+            "y": 9.79916
+          },
+          "distance": null
+        }
+      },
+      "arrival": {
+        "station": {
+          "id": "8574848",
+          "name": "Davos Dorf, Bahnhof",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.809753,
+            "y": 9.84176
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T14:56:00+0200",
+        "arrivalTimestamp": 1689339360,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": 0,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": "2023-07-14T14:56:00+0200",
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8574848",
+          "name": "Davos Dorf, Bahnhof",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.809753,
+            "y": 9.84176
+          },
+          "distance": null
+        }
+      }
+    },
+    {
+      "journey": null,
+      "walk": {
+        "duration": 120
+      },
+      "departure": {
+        "station": {
+          "id": "8574848",
+          "name": "Davos Dorf, Bahnhof",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.809753,
+            "y": 9.84176
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T14:56:00+0200",
+        "arrivalTimestamp": 1689339360,
+        "departure": "2023-07-14T14:56:00+0200",
+        "departureTimestamp": 1689339360,
+        "delay": null,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8574848",
+          "name": "Davos Dorf, Bahnhof",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.809753,
+            "y": 9.84176
+          },
+          "distance": null
+        }
+      },
+      "arrival": {
+        "station": {
+          "id": "8509072",
+          "name": "Davos Dorf",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.809718,
+            "y": 9.842113
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T14:58:00+0200",
+        "arrivalTimestamp": 1689339480,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": null,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8509072",
+          "name": "Davos Dorf",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.809718,
+            "y": 9.842113
+          },
+          "distance": null
+        }
+      }
+    },
+    {
+      "journey": {
+        "name": "001048",
+        "category": "RE",
+        "subcategory": null,
+        "categoryCode": null,
+        "number": "001048",
+        "operator": "RhB",
+        "to": "Landquart",
+        "passList": [
+          {
+            "station": {
+              "id": "8509072",
+              "name": "Davos Dorf",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.809718,
+                "y": 9.842113
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T14:58:00+0200",
+            "arrivalTimestamp": 1689339480,
+            "departure": "2023-07-14T15:06:00+0200",
+            "departureTimestamp": 1689339960,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T15:06:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509072",
+              "name": "Davos Dorf",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.809718,
+                "y": 9.842113
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8509071",
+              "name": "Davos Wolfgang",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.831955,
+                "y": 9.854554
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T15:11:00+0200",
+            "arrivalTimestamp": 1689340260,
+            "departure": "2023-07-14T15:11:00+0200",
+            "departureTimestamp": 1689340260,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T15:11:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509071",
+              "name": "Davos Wolfgang",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.831955,
+                "y": 9.854554
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8509070",
+              "name": "Davos Laret",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.848196,
+                "y": 9.873399
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T15:16:00+0200",
+            "arrivalTimestamp": 1689340560,
+            "departure": "2023-07-14T15:16:00+0200",
+            "departureTimestamp": 1689340560,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T15:16:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509070",
+              "name": "Davos Laret",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.848196,
+                "y": 9.873399
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8509069",
+              "name": "Cavadürli",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.870395,
+                "y": 9.868027
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T15:22:00+0200",
+            "arrivalTimestamp": 1689340920,
+            "departure": "2023-07-14T15:22:00+0200",
+            "departureTimestamp": 1689340920,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T15:22:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509069",
+              "name": "Cavadürli",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.870395,
+                "y": 9.868027
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8509068",
+              "name": "Klosters Platz",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.869211,
+                "y": 9.880938
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T15:29:00+0200",
+            "arrivalTimestamp": 1689341340,
+            "departure": "2023-07-14T15:31:00+0200",
+            "departureTimestamp": 1689341460,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T15:31:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509068",
+              "name": "Klosters Platz",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.869211,
+                "y": 9.880938
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8509067",
+              "name": "Klosters Dorf",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.883469,
+                "y": 9.875325
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T15:33:00+0200",
+            "arrivalTimestamp": 1689341580,
+            "departure": "2023-07-14T15:34:00+0200",
+            "departureTimestamp": 1689341640,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T15:34:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509067",
+              "name": "Klosters Dorf",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.883469,
+                "y": 9.875325
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8509064",
+              "name": "Küblis",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.914281,
+                "y": 9.77184
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T15:48:00+0200",
+            "arrivalTimestamp": 1689342480,
+            "departure": "2023-07-14T15:50:00+0200",
+            "departureTimestamp": 1689342600,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T15:50:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509064",
+              "name": "Küblis",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.914281,
+                "y": 9.77184
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8509060",
+              "name": "Schiers",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.967984,
+                "y": 9.688358
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T16:00:00+0200",
+            "arrivalTimestamp": 1689343200,
+            "departure": "2023-07-14T16:01:00+0200",
+            "departureTimestamp": 1689343260,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T16:01:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509060",
+              "name": "Schiers",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.967984,
+                "y": 9.688358
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8509059",
+              "name": "Grüsch",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.980492,
+                "y": 9.645781
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T16:05:00+0200",
+            "arrivalTimestamp": 1689343500,
+            "departure": "2023-07-14T16:05:00+0200",
+            "departureTimestamp": 1689343500,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T16:05:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509059",
+              "name": "Grüsch",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.980492,
+                "y": 9.645781
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8509002",
+              "name": "Landquart",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.967437,
+                "y": 9.554043
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T16:13:00+0200",
+            "arrivalTimestamp": 1689343980,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": 0,
+            "platform": "5AB",
+            "prognosis": {
+              "platform": null,
+              "arrival": "2023-07-14T16:13:00+0200",
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509002",
+              "name": "Landquart",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.967437,
+                "y": 9.554043
+              },
+              "distance": null
+            }
+          }
+        ],
+        "capacity1st": null,
+        "capacity2nd": null
+      },
+      "walk": null,
+      "departure": {
+        "station": {
+          "id": "8509072",
+          "name": "Davos Dorf",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.809718,
+            "y": 9.842113
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T14:58:00+0200",
+        "arrivalTimestamp": 1689339480,
+        "departure": "2023-07-14T15:06:00+0200",
+        "departureTimestamp": 1689339960,
+        "delay": 0,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": "2023-07-14T15:06:00+0200",
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8509072",
+          "name": "Davos Dorf",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.809718,
+            "y": 9.842113
+          },
+          "distance": null
+        }
+      },
+      "arrival": {
+        "station": {
+          "id": "8509002",
+          "name": "Landquart",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.967437,
+            "y": 9.554043
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T16:13:00+0200",
+        "arrivalTimestamp": 1689343980,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": 0,
+        "platform": "5AB",
+        "prognosis": {
+          "platform": null,
+          "arrival": "2023-07-14T16:13:00+0200",
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8509002",
+          "name": "Landquart",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.967437,
+            "y": 9.554043
+          },
+          "distance": null
+        }
+      }
+    },
+    {
+      "journey": {
+        "name": "000578",
+        "category": "IC",
+        "subcategory": null,
+        "categoryCode": null,
+        "number": "3",
+        "operator": "SBB",
+        "to": "Basel SBB",
+        "passList": [
+          {
+            "station": {
+              "id": "8509002",
+              "name": "Landquart",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.967437,
+                "y": 9.554043
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T16:13:00+0200",
+            "arrivalTimestamp": 1689343980,
+            "departure": "2023-07-14T16:18:00+0200",
+            "departureTimestamp": 1689344280,
+            "delay": 0,
+            "platform": "3",
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T16:18:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509002",
+              "name": "Landquart",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.967437,
+                "y": 9.554043
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8509411",
+              "name": "Sargans",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.044825,
+                "y": 9.446259
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T16:26:00+0200",
+            "arrivalTimestamp": 1689344760,
+            "departure": "2023-07-14T16:26:00+0200",
+            "departureTimestamp": 1689344760,
+            "delay": 1,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T16:27:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8509411",
+              "name": "Sargans",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.044825,
+                "y": 9.446259
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "0000176",
+              "name": "Zimmerberg-Basistunnel",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.351675,
+                "y": 8.52196
+              },
+              "distance": null
+            },
+            "arrival": null,
+            "arrivalTimestamp": null,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": null,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:37:05+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "0000176",
+              "name": "Zimmerberg-Basistunnel",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.351675,
+                "y": 8.52196
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8503000",
+              "name": "Zürich HB",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.377847,
+                "y": 8.540502
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T17:22:00+0200",
+            "arrivalTimestamp": 1689348120,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": 0,
+            "platform": "13",
+            "prognosis": {
+              "platform": null,
+              "arrival": "2023-07-14T17:22:00+0200",
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8503000",
+              "name": "Zürich HB",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.377847,
+                "y": 8.540502
+              },
+              "distance": null
+            }
+          }
+        ],
+        "capacity1st": null,
+        "capacity2nd": null
+      },
+      "walk": null,
+      "departure": {
+        "station": {
+          "id": "8509002",
+          "name": "Landquart",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.967437,
+            "y": 9.554043
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T16:13:00+0200",
+        "arrivalTimestamp": 1689343980,
+        "departure": "2023-07-14T16:18:00+0200",
+        "departureTimestamp": 1689344280,
+        "delay": 0,
+        "platform": "3",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": "2023-07-14T16:18:00+0200",
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8509002",
+          "name": "Landquart",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.967437,
+            "y": 9.554043
+          },
+          "distance": null
+        }
+      },
+      "arrival": {
+        "station": {
+          "id": "8503000",
+          "name": "Zürich HB",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.377847,
+            "y": 8.540502
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T17:22:00+0200",
+        "arrivalTimestamp": 1689348120,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": 0,
+        "platform": "13",
+        "prognosis": {
+          "platform": null,
+          "arrival": "2023-07-14T17:22:00+0200",
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8503000",
+          "name": "Zürich HB",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.377847,
+            "y": 8.540502
+          },
+          "distance": null
+        }
+      }
+    },
+    {
+      "journey": {
+        "name": "000728",
+        "category": "IC",
+        "subcategory": null,
+        "categoryCode": null,
+        "number": "1",
+        "operator": "SBB",
+        "to": "Genève-Aéroport",
+        "passList": [
+          {
+            "station": {
+              "id": "8503000",
+              "name": "Zürich HB",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.377847,
+                "y": 8.540502
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T17:22:00+0200",
+            "arrivalTimestamp": 1689348120,
+            "departure": "2023-07-14T17:32:00+0200",
+            "departureTimestamp": 1689348720,
+            "delay": 0,
+            "platform": "32",
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T17:32:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8503000",
+              "name": "Zürich HB",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.377847,
+                "y": 8.540502
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "0000132",
+              "name": "Bahn-2000-Strecke",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.196371,
+                "y": 7.689367
+              },
+              "distance": null
+            },
+            "arrival": null,
+            "arrivalTimestamp": null,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": null,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T14:36:05+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "0000132",
+              "name": "Bahn-2000-Strecke",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 47.196371,
+                "y": 7.689367
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8507000",
+              "name": "Bern",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.948832,
+                "y": 7.439136
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T18:28:00+0200",
+            "arrivalTimestamp": 1689352080,
+            "departure": "2023-07-14T18:34:00+0200",
+            "departureTimestamp": 1689352440,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T18:34:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8507000",
+              "name": "Bern",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.948832,
+                "y": 7.439136
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8504100",
+              "name": "Fribourg/Freiburg",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.803151,
+                "y": 7.151052
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T18:55:00+0200",
+            "arrivalTimestamp": 1689353700,
+            "departure": "2023-07-14T18:56:00+0200",
+            "departureTimestamp": 1689353760,
+            "delay": 1,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T18:57:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8504100",
+              "name": "Fribourg/Freiburg",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.803151,
+                "y": 7.151052
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8501120",
+              "name": "Lausanne",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.516795,
+                "y": 6.629087
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T19:40:00+0200",
+            "arrivalTimestamp": 1689356400,
+            "departure": "2023-07-14T19:43:00+0200",
+            "departureTimestamp": 1689356580,
+            "delay": 0,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": "2023-07-14T19:43:00+0200",
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8501120",
+              "name": "Lausanne",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.516795,
+                "y": 6.629087
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8501008",
+              "name": "Genève",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.210228,
+                "y": 6.142435
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T20:18:00+0200",
+            "arrivalTimestamp": 1689358680,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": 0,
+            "platform": "3",
+            "prognosis": {
+              "platform": null,
+              "arrival": "2023-07-14T20:18:00+0200",
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8501008",
+              "name": "Genève",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.210228,
+                "y": 6.142435
+              },
+              "distance": null
+            }
+          }
+        ],
+        "capacity1st": null,
+        "capacity2nd": null
+      },
+      "walk": null,
+      "departure": {
+        "station": {
+          "id": "8503000",
+          "name": "Zürich HB",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.377847,
+            "y": 8.540502
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T17:22:00+0200",
+        "arrivalTimestamp": 1689348120,
+        "departure": "2023-07-14T17:32:00+0200",
+        "departureTimestamp": 1689348720,
+        "delay": 0,
+        "platform": "32",
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": "2023-07-14T17:32:00+0200",
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8503000",
+          "name": "Zürich HB",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 47.377847,
+            "y": 8.540502
+          },
+          "distance": null
+        }
+      },
+      "arrival": {
+        "station": {
+          "id": "8501008",
+          "name": "Genève",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.210228,
+            "y": 6.142435
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T20:18:00+0200",
+        "arrivalTimestamp": 1689358680,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": 0,
+        "platform": "3",
+        "prognosis": {
+          "platform": null,
+          "arrival": "2023-07-14T20:18:00+0200",
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8501008",
+          "name": "Genève",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.210228,
+            "y": 6.142435
+          },
+          "distance": null
+        }
+      }
+    },
+    {
+      "journey": null,
+      "walk": {
+        "duration": 300
+      },
+      "departure": {
+        "station": {
+          "id": "8501008",
+          "name": "Genève",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.210228,
+            "y": 6.142435
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T20:18:00+0200",
+        "arrivalTimestamp": 1689358680,
+        "departure": "2023-07-14T20:18:00+0200",
+        "departureTimestamp": 1689358680,
+        "delay": null,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8501008",
+          "name": "Genève",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.210228,
+            "y": 6.142435
+          },
+          "distance": null
+        }
+      },
+      "arrival": {
+        "station": {
+          "id": "8587057",
+          "name": "Genève, gare Cornavin",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.209751,
+            "y": 6.14242
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T20:23:00+0200",
+        "arrivalTimestamp": 1689358980,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": null,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8587057",
+          "name": "Genève, gare Cornavin",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.209751,
+            "y": 6.14242
+          },
+          "distance": null
+        }
+      }
+    },
+    {
+      "journey": {
+        "name": "115843",
+        "category": "B",
+        "subcategory": null,
+        "categoryCode": null,
+        "number": "8",
+        "operator": "TPG",
+        "to": "Veyrier, douane",
+        "passList": [
+          {
+            "station": {
+              "id": "8587057",
+              "name": "Genève, gare Cornavin",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.209751,
+                "y": 6.14242
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T20:23:00+0200",
+            "arrivalTimestamp": 1689358980,
+            "departure": "2023-07-14T20:25:00+0200",
+            "departureTimestamp": 1689359100,
+            "delay": null,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8587057",
+              "name": "Genève, gare Cornavin",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.209751,
+                "y": 6.14242
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8592801",
+              "name": "Genève, Chantepoulet",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.208172,
+                "y": 6.143533
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T20:27:00+0200",
+            "arrivalTimestamp": 1689359220,
+            "departure": "2023-07-14T20:27:00+0200",
+            "departureTimestamp": 1689359220,
+            "delay": null,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8592801",
+              "name": "Genève, Chantepoulet",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.208172,
+                "y": 6.143533
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8592864",
+              "name": "Genève, Mont-Blanc",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.207231,
+                "y": 6.147016
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T20:29:00+0200",
+            "arrivalTimestamp": 1689359340,
+            "departure": "2023-07-14T20:29:00+0200",
+            "departureTimestamp": 1689359340,
+            "delay": null,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8592864",
+              "name": "Genève, Mont-Blanc",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.207231,
+                "y": 6.147016
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8592856",
+              "name": "Genève, Métropole",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.203413,
+                "y": 6.151499
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T20:32:00+0200",
+            "arrivalTimestamp": 1689359520,
+            "departure": "2023-07-14T20:32:00+0200",
+            "departureTimestamp": 1689359520,
+            "delay": null,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8592856",
+              "name": "Genève, Métropole",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.203413,
+                "y": 6.151499
+              },
+              "distance": null
+            }
+          },
+          {
+            "station": {
+              "id": "8587061",
+              "name": "Genève, Rive",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.201881,
+                "y": 6.152792
+              },
+              "distance": null
+            },
+            "arrival": "2023-07-14T20:33:00+0200",
+            "arrivalTimestamp": 1689359580,
+            "departure": null,
+            "departureTimestamp": null,
+            "delay": null,
+            "platform": null,
+            "prognosis": {
+              "platform": null,
+              "arrival": null,
+              "departure": null,
+              "capacity1st": null,
+              "capacity2nd": null
+            },
+            "realtimeAvailability": null,
+            "location": {
+              "id": "8587061",
+              "name": "Genève, Rive",
+              "score": null,
+              "coordinate": {
+                "type": "WGS84",
+                "x": 46.201881,
+                "y": 6.152792
+              },
+              "distance": null
+            }
+          }
+        ],
+        "capacity1st": null,
+        "capacity2nd": null
+      },
+      "walk": null,
+      "departure": {
+        "station": {
+          "id": "8587057",
+          "name": "Genève, gare Cornavin",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.209751,
+            "y": 6.14242
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T20:23:00+0200",
+        "arrivalTimestamp": 1689358980,
+        "departure": "2023-07-14T20:25:00+0200",
+        "departureTimestamp": 1689359100,
+        "delay": null,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8587057",
+          "name": "Genève, gare Cornavin",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.209751,
+            "y": 6.14242
+          },
+          "distance": null
+        }
+      },
+      "arrival": {
+        "station": {
+          "id": "8587061",
+          "name": "Genève, Rive",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.201881,
+            "y": 6.152792
+          },
+          "distance": null
+        },
+        "arrival": "2023-07-14T20:33:00+0200",
+        "arrivalTimestamp": 1689359580,
+        "departure": null,
+        "departureTimestamp": null,
+        "delay": null,
+        "platform": null,
+        "prognosis": {
+          "platform": null,
+          "arrival": null,
+          "departure": null,
+          "capacity1st": null,
+          "capacity2nd": null
+        },
+        "realtimeAvailability": null,
+        "location": {
+          "id": "8587061",
+          "name": "Genève, Rive",
+          "score": null,
+          "coordinate": {
+            "type": "WGS84",
+            "x": 46.201881,
+            "y": 6.152792
+          },
+          "distance": null
+        }
+      }
+    }
+  ]
+}

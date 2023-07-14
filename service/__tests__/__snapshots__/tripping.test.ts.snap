@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should convert the connection to a station list 1`] = `
+[
+  {
+    "arrival": null,
+    "arrivalPlatform": null,
+    "departure": 2023-07-14T12:36:00.000Z,
+    "departurePlatform": null,
+    "station": {
+      "coordinate": {
+        "type": "WGS84",
+        "x": 46.766596,
+        "y": 9.799247,
+      },
+      "distance": null,
+      "id": "8509075",
+      "name": "Davos Frauenkirch",
+      "score": null,
+    },
+  },
+  {
+    "arrival": 2023-07-14T12:38:00.000Z,
+    "arrivalPlatform": null,
+    "departure": 2023-07-14T12:38:00.000Z,
+    "departurePlatform": null,
+    "station": {
+      "coordinate": {
+        "type": "WGS84",
+        "x": 46.76702,
+        "y": 9.79916,
+      },
+      "distance": null,
+      "id": "8581178",
+      "name": "Davos Frauenkirch, Landhaus",
+      "score": null,
+    },
+  },
+  {
+    "arrival": 2023-07-14T12:56:00.000Z,
+    "arrivalPlatform": null,
+    "departure": 2023-07-14T12:56:00.000Z,
+    "departurePlatform": null,
+    "station": {
+      "coordinate": {
+        "type": "WGS84",
+        "x": 46.809753,
+        "y": 9.84176,
+      },
+      "distance": null,
+      "id": "8574848",
+      "name": "Davos Dorf, Bahnhof",
+      "score": null,
+    },
+  },
+  {
+    "arrival": 2023-07-14T12:58:00.000Z,
+    "arrivalPlatform": null,
+    "departure": 2023-07-14T13:06:00.000Z,
+    "departurePlatform": null,
+    "station": {
+      "coordinate": {
+        "type": "WGS84",
+        "x": 46.809718,
+        "y": 9.842113,
+      },
+      "distance": null,
+      "id": "8509072",
+      "name": "Davos Dorf",
+      "score": null,
+    },
+  },
+  {
+    "arrival": 2023-07-14T14:13:00.000Z,
+    "arrivalPlatform": "5AB",
+    "departure": 2023-07-14T14:18:00.000Z,
+    "departurePlatform": "3",
+    "station": {
+      "coordinate": {
+        "type": "WGS84",
+        "x": 46.967437,
+        "y": 9.554043,
+      },
+      "distance": null,
+      "id": "8509002",
+      "name": "Landquart",
+      "score": null,
+    },
+  },
+  {
+    "arrival": 2023-07-14T15:22:00.000Z,
+    "arrivalPlatform": "13",
+    "departure": 2023-07-14T15:32:00.000Z,
+    "departurePlatform": "32",
+    "station": {
+      "coordinate": {
+        "type": "WGS84",
+        "x": 47.377847,
+        "y": 8.540502,
+      },
+      "distance": null,
+      "id": "8503000",
+      "name": "Zürich HB",
+      "score": null,
+    },
+  },
+  {
+    "arrival": 2023-07-14T18:18:00.000Z,
+    "arrivalPlatform": "3",
+    "departure": 2023-07-14T18:18:00.000Z,
+    "departurePlatform": null,
+    "station": {
+      "coordinate": {
+        "type": "WGS84",
+        "x": 46.210228,
+        "y": 6.142435,
+      },
+      "distance": null,
+      "id": "8501008",
+      "name": "Genève",
+      "score": null,
+    },
+  },
+  {
+    "arrival": 2023-07-14T18:23:00.000Z,
+    "arrivalPlatform": null,
+    "departure": 2023-07-14T18:25:00.000Z,
+    "departurePlatform": null,
+    "station": {
+      "coordinate": {
+        "type": "WGS84",
+        "x": 46.209751,
+        "y": 6.14242,
+      },
+      "distance": null,
+      "id": "8587057",
+      "name": "Genève, gare Cornavin",
+      "score": null,
+    },
+  },
+  {
+    "arrival": 2023-07-14T18:33:00.000Z,
+    "arrivalPlatform": null,
+    "departure": null,
+    "departurePlatform": null,
+    "station": {
+      "coordinate": {
+        "type": "WGS84",
+        "x": 46.201881,
+        "y": 6.152792,
+      },
+      "distance": null,
+      "id": "8587061",
+      "name": "Genève, Rive",
+      "score": null,
+    },
+  },
+]
+`;

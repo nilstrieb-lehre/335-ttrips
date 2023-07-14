@@ -1,10 +1,7 @@
 import { Foundation, MaterialIcons } from "@expo/vector-icons";
 import {
   getCurrentPositionAsync,
-  LocationAccuracy,
-  LocationObject,
   requestForegroundPermissionsAsync,
-  watchPositionAsync,
 } from "expo-location";
 import { router } from "expo-router";
 import React, {
@@ -24,6 +21,7 @@ import {
   ViewStyle,
 } from "react-native";
 
+import Connections from "./Connections";
 import SearchLocation from "./SearchLocation";
 import Colors from "../../constants/Colors";
 import debounce from "../../service/debounce";
@@ -34,7 +32,6 @@ import {
   Location,
   locations,
 } from "../../service/transport";
-import Connections from "../Connections";
 import { Text, useThemeColor } from "../Themed";
 
 type SearchViewProps = {

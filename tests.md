@@ -1,5 +1,9 @@
 # Testfälle
 
+## 0. Automatisierte Tests
+
+Für einige Funktionen gibt es automatisierte Tests mit `jest`.
+
 ## 1. Verbindung
 
 1. App öffnen

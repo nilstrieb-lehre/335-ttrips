@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import { Connection, Section } from "../service/transport";
-import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
-import { Text, useThemeColor } from "./Themed";
-import Colors from "../constants/Colors";
-import { renderDate } from "../service/utils";
-import useCurrentTrip from "../service/use-current-trip";
 import { router } from "expo-router";
+import React, { useState } from "react";
+import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
+
+import Colors from "../../constants/Colors";
+import { Connection, Section } from "../../service/transport";
+import useCurrentTrip from "../../service/use-current-trip";
+import { renderDate } from "../../service/utils";
+import { Text, useThemeColor } from "../Themed";
 
 type ConnectionsProps = {
-  data: Array<Connection>;
+  data: Connection[];
 };
 
 const Connections = ({ data }: ConnectionsProps) => {
@@ -25,7 +26,7 @@ const Connections = ({ data }: ConnectionsProps) => {
     "text",
   );
   const { setCurrentTrip } = useCurrentTrip();
-  const [{ width, height }, setDimension] = useState({ width: 0, height: 0 });
+  const [{ width }, setDimension] = useState({ width: 0, height: 0 });
 
   const renderItem = ({ item }: { item: Connection }) => {
     const from = renderDate(item.from.departure!, false);
@@ -50,8 +51,6 @@ const Connections = ({ data }: ConnectionsProps) => {
       const percentage = (arrival - startDate) / totalDurationOfTrip;
       return width * percentage;
     };
-
-    console.log(item.sections.at(-2));
 
     const sectionsWithoutWalk = item.sections.filter((val) => val.walk == null);
     const points: React.ReactNode[] = sectionsWithoutWalk

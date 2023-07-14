@@ -5,7 +5,7 @@ type Seconds = number;
 
 export type Location = {
   id: string;
-  type: "station" | "poi" | "address" | "refine";
+  type?: "station" | "poi" | "address" | "refine";
   name: string;
   score: number | null;
   coordinate: Coordinate;
@@ -30,13 +30,13 @@ export type Stop = {
   station: Location;
   arrival: Datetime | null;
   departure: Datetime | null;
-  delay: number;
-  platform: string;
+  delay: number | null;
+  platform: string | null;
 };
 
 export type Section = {
-  journey: Journey;
-  walk: null | { duration: Seconds };
+  journey: Journey | null;
+  walk: null | { duration: Seconds | null };
   departure: Stop;
   arrival: Stop;
 };
