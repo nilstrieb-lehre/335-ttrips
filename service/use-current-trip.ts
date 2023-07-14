@@ -1,5 +1,6 @@
-import { Connection } from "./transport";
 import React, { useContext } from "react";
+
+import { Connection } from "./transport";
 
 export type CurrentTrip = {
   currentTrip: Connection | null;

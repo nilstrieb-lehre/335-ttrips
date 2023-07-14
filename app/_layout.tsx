@@ -8,8 +8,9 @@ import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import React, { useEffect } from "react";
 import { useColorScheme } from "react-native";
-import CurrentTripProvider from "../service/CurrentTripProvider";
+
 import CredentialsProvider from "../service/CredentialsProvider";
+import CurrentTripProvider from "../service/CurrentTripProvider";
 
 export {
   // Catch any errors thrown by the Layout component.

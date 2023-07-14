@@ -1,10 +1,11 @@
+import { router } from "expo-router";
 import React from "react";
 import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
+
 import { Connection } from "../../service/transport";
-import { Text } from "../Themed";
-import { renderDate } from "../../service/utils";
 import useCurrentTrip from "../../service/use-current-trip";
-import { router } from "expo-router";
+import { renderDate } from "../../service/utils";
+import { Text } from "../Themed";
 
 type Props = {
   trips: Connection[];

@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { StyleSheet, View } from "react-native";
-import { Text } from "../Themed";
-import { CredentialsContext } from "../../service/firebase";
-import Settings from "./Settings";
+
 import Login from "./Login";
+import Settings from "./Settings";
+import { CredentialsContext } from "../../service/firebase";
+import { Text } from "../Themed";
 
 const AccountSettings = () => {
   const { credentials } = useContext(CredentialsContext);

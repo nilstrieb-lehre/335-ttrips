@@ -1,6 +1,7 @@
-import React, { useState } from "react";
-import { CredentialsContext } from "./firebase";
 import { UserCredential } from "firebase/auth";
+import React, { useState } from "react";
+
+import { CredentialsContext } from "./firebase";
 
 const CredentialsProvider = ({
   children,

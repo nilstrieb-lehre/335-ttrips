@@ -1,14 +1,15 @@
+import { router } from "expo-router";
 import React from "react";
-import { Connection } from "../service/transport";
 import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
+
 import { Text, useThemeColor } from "./Themed";
 import Colors from "../constants/Colors";
-import { renderDate } from "../service/utils";
+import { Connection } from "../service/transport";
 import useCurrentTrip from "../service/use-current-trip";
-import { router } from "expo-router";
+import { renderDate } from "../service/utils";
 
 type ConnectionsProps = {
-  data: Array<Connection>;
+  data: Connection[];
 };
 
 const Connections = ({ data }: ConnectionsProps) => {

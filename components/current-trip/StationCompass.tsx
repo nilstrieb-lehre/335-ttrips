@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Dimensions, Image, StyleSheet } from "react-native";
-import { Magnetometer, MagnetometerMeasurement } from "expo-sensors";
-import { Text, View } from "../Themed";
-import { Subscription } from "expo-sensors/src/DeviceSensor";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import * as Location from "expo-location";
 import { LocationObject, LocationSubscription } from "expo-location";
+import { Magnetometer, MagnetometerMeasurement } from "expo-sensors";
+import { Subscription } from "expo-sensors/src/DeviceSensor";
+import React, { useEffect, useState } from "react";
+import { Dimensions, Image, StyleSheet } from "react-native";
+
 import { Coordinate } from "../../service/transport";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { targetAngle } from "../../service/tripping";
+import { Text, View } from "../Themed";
 
 const { width } = Dimensions.get("window");
 
@@ -16,7 +17,7 @@ const COMPASS_MARGIN = 80;
 const angle = (magnetometer: MagnetometerMeasurement) => {
   let angle = 0;
   if (magnetometer) {
-    let { x, y } = magnetometer;
+    const { x, y } = magnetometer;
     if (Math.atan2(y, x) >= 0) {
       angle = Math.atan2(y, x) * (180 / Math.PI);
     } else {

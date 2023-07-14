@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Button, StyleSheet, View } from "react-native";
-import { Text, TextInput } from "../Themed";
+
 import { CredentialsContext, firebase } from "../../service/firebase";
+import { Text, TextInput } from "../Themed";
 
 const Login = () => {
   const { setCredentials } = useContext(CredentialsContext);

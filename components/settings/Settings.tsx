@@ -1,8 +1,9 @@
+import { UserCredential } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
 import { Button, FlatList, StyleSheet, View } from "react-native";
-import { UserCredential } from "firebase/auth";
-import { Text } from "../Themed";
+
 import { CredentialsContext, firebase } from "../../service/firebase";
+import { Text } from "../Themed";
 
 const Settings = ({ credentials }: { credentials: UserCredential }) => {
   const { setCredentials } = useContext(CredentialsContext);

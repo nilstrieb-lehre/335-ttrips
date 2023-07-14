@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+
 import { View } from "../../components/Themed";
 import AccountSettings from "../../components/settings/AccountSettings";
 

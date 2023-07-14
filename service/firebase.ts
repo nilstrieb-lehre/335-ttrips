@@ -1,5 +1,12 @@
 import { initializeApp, FirebaseApp } from "firebase/app";
 import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  UserCredential,
+  Auth,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import {
   getDatabase,
   Database,
   ref,
@@ -7,13 +14,6 @@ import {
   onValue,
   Unsubscribe,
 } from "firebase/database";
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  UserCredential,
-  Auth,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
 import React from "react";
 
 class FirebaseService {

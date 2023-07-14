@@ -1,3 +1,4 @@
+import { Foundation, MaterialIcons } from "@expo/vector-icons";
 import React, {
   RefObject,
   useContext,
@@ -14,10 +15,11 @@ import {
   View,
   ViewStyle,
 } from "react-native";
+
 import SearchLocation from "./SearchLocation";
-import { Text, useThemeColor } from "../Themed";
 import Colors from "../../constants/Colors";
-import { Foundation, MaterialIcons } from "@expo/vector-icons";
+import debounce from "../../service/debounce";
+import { CredentialsContext, firebase } from "../../service/firebase";
 import {
   Connection,
   connections as getConnections,
@@ -25,8 +27,7 @@ import {
   locations,
 } from "../../service/transport";
 import Connections from "../Connections";
-import { CredentialsContext, firebase } from "../../service/firebase";
-import debounce from "../../service/debounce";
+import { Text, useThemeColor } from "../Themed";
 
 type SearchViewProps = {
   onFocus?: (el: ActiveInput) => void;
@@ -54,7 +55,7 @@ const SearchView = (props: SearchViewProps) => {
       <StationConnection />
       <View style={styles.searchStations}>
         <SearchLocation
-          label={"From"}
+          label="From"
           borderBottom
           onFocus={() => props.onFocus && props.onFocus(ActiveInput.FROM)}
           onBlur={props.onBlur}
@@ -63,7 +64,7 @@ const SearchView = (props: SearchViewProps) => {
           textInputRef={props.fromRef}
         />
         <SearchLocation
-          label={"To"}
+          label="To"
           onBlur={props.onBlur}
           onFocus={() => props.onFocus && props.onFocus(ActiveInput.TO)}
           value={props.toValue}
@@ -158,14 +159,14 @@ type ResultViewProps = {
   predefinedLocations: string[];
 };
 
-const searchCache = new Map<string, Array<Location>>();
+const searchCache = new Map<string, Location[]>();
 
 const ResultView = ({
   searchValue,
   setSearchValue,
   predefinedLocations,
 }: ResultViewProps) => {
-  const [searchResults, setSearchResults] = useState<Array<Location>>([]);
+  const [searchResults, setSearchResults] = useState<Location[]>([]);
   const backgroundColor = useThemeColor(
     {
       light: Colors.searchView.light.background,
@@ -194,7 +195,7 @@ const ResultView = ({
     <View style={[styles.resultView, { backgroundColor }]}>
       <ScrollView
         contentContainerStyle={{ alignItems: "center" }}
-        keyboardShouldPersistTaps={"handled"}
+        keyboardShouldPersistTaps="handled"
       >
         {searchValue.length === 0 && (
           <ResultElement style={{ marginBottom: 35 }} hasIcon>
@@ -258,7 +259,7 @@ const NewTrips = () => {
   const [activeElement, setActiveElement] = useState<ActiveInput | null>(null);
   const [fromValue, setFromValue] = useState("");
   const [toValue, setToValue] = useState("");
-  const [connections, setConnections] = useState<Array<Connection>>();
+  const [connections, setConnections] = useState<Connection[]>();
   const fromRef = useRef<TextInput>(null);
   const toRef = useRef<TextInput>(null);
 

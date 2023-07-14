@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { ScrollView, StyleSheet, View } from "react-native";
+
 import { Connection } from "../../service/transport";
-import { Text } from "../Themed";
 import { tripToStopStations } from "../../service/tripping";
 import { renderDate } from "../../service/utils";
+import { Text } from "../Themed";
 
 const TripProgress = ({ currentTrip }: { currentTrip: Connection }) => {
   const [[stations, currentPosition], setStations] = useState(

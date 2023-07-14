@@ -1,11 +1,12 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { Link, Text } from "../Themed";
-import useCurrentTrip from "../../service/use-current-trip";
-import { nextStop } from "../../service/tripping";
+
 import StationCompass from "./StationCompass";
-import { Connection } from "../../service/transport";
 import TripProgress from "./TripProgress";
+import { Connection } from "../../service/transport";
+import { nextStop } from "../../service/tripping";
+import useCurrentTrip from "../../service/use-current-trip";
+import { Link, Text } from "../Themed";
 
 const TripInfo = ({ currentTrip }: { currentTrip: Connection }) => {
   const next = nextStop(currentTrip);

@@ -1,6 +1,7 @@
 import React from "react";
-import useAsyncStorage from "./use-async-storage";
+
 import { Connection } from "./transport";
+import useAsyncStorage from "./use-async-storage";
 import { CurrentTripContext } from "./use-current-trip";
 
 const CurrentTripProvider = ({

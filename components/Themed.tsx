@@ -3,6 +3,8 @@
  * https://docs.expo.io/guides/color-schemes/
  */
 
+import { Link as DefaultLink } from "expo-router";
+import { LinkProps as DefaultLinkProps } from "expo-router/build/link/Link";
 import {
   Text as DefaultText,
   TextInput as DefaultTextInput,
@@ -11,8 +13,6 @@ import {
 } from "react-native";
 
 import Colors from "../constants/Colors";
-import { Link as DefaultLink } from "expo-router";
-import { LinkProps as DefaultLinkProps } from "expo-router/build/link/Link";
 
 export function useThemeColor(
   props: { light?: string; dark?: string },

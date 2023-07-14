@@ -1,4 +1,4 @@
-export default function debounce<T extends Array<any>>(
+export default function debounce<T extends any[]>(
   cb: (...args: T) => void,
   delay = 250,
 ): (...args: T) => void {
