@@ -1,7 +1,7 @@
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { UserCredential } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
 import {
-  Dimensions,
   FlatList,
   StyleSheet,
   TouchableOpacity,
@@ -10,13 +10,10 @@ import {
 } from "react-native";
 
 import Colors from "../../constants/Colors";
-import { CredentialsContext, firebase } from "../../service/firebase";
-import { Text, TextInput } from "../Themed";
 import sharedStyles from "../../constants/sharedStyles";
+import { CredentialsContext, firebase } from "../../service/firebase";
 import { useBackground } from "../../service/utils";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
-
-const { width } = Dimensions.get("window");
+import { Text, TextInput } from "../Themed";
 
 type LocationProps = {
   filled: boolean;
@@ -86,7 +83,7 @@ const Settings = ({ credentials }: { credentials: UserCredential }) => {
   };
 
   const renderLocation = ({ item, index }: { item: string; index: number }) => (
-    <Location filled={true} name={item} onPress={() => removeLocation(index)} />
+    <Location filled name={item} onPress={() => removeLocation(index)} />
   );
 
   return (

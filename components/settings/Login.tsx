@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 
-import { CredentialsContext, firebase } from "../../service/firebase";
-import { Text, TextInput } from "../Themed";
-import { useBackground } from "../../service/utils";
 import sharedStyles from "../../constants/sharedStyles";
+import { CredentialsContext, firebase } from "../../service/firebase";
+import { useBackground } from "../../service/utils";
+import { Text, TextInput } from "../Themed";
 
 const Login = () => {
   const { setCredentials } = useContext(CredentialsContext);
@@ -31,7 +31,7 @@ const Login = () => {
       <TextInput
         value={email}
         onChangeText={setEmail}
-        autoCapitalize={"none"}
+        autoCapitalize="none"
         accessibilityLabel="Email input"
         style={sharedStyles.input}
       />

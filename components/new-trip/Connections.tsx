@@ -1,6 +1,7 @@
 import { router } from "expo-router";
 import React, { useState } from "react";
 import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
+
 import { Connection, Section } from "../../service/transport";
 import useCurrentTrip from "../../service/use-current-trip";
 import { renderDate, useBackground, useForeground } from "../../service/utils";

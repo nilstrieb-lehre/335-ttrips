@@ -1,3 +1,10 @@
+import { MaterialIcons } from "@expo/vector-icons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import {
+  getCurrentPositionAsync,
+  requestForegroundPermissionsAsync,
+} from "expo-location";
+import { router } from "expo-router";
 import React, {
   RefObject,
   useContext,
@@ -14,25 +21,19 @@ import {
   View,
   ViewStyle,
 } from "react-native";
+
+import Connections from "./Connections";
 import SearchLocation from "./SearchLocation";
-import { Text } from "../Themed";
-import { MaterialIcons } from "@expo/vector-icons";
+import debounce from "../../service/debounce";
+import { CredentialsContext, firebase } from "../../service/firebase";
 import {
   Connection,
   connections as getConnections,
   Location,
   locations,
 } from "../../service/transport";
-import Connections from "./Connections";
-import { CredentialsContext, firebase } from "../../service/firebase";
-import debounce from "../../service/debounce";
-import {
-  getCurrentPositionAsync,
-  requestForegroundPermissionsAsync,
-} from "expo-location";
-import { router } from "expo-router";
 import { useBackground, useForeground } from "../../service/utils";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { Text } from "../Themed";
 
 type SearchViewProps = {
   onFocus?: (el: ActiveInput) => void;
@@ -54,7 +55,7 @@ const SearchView = (props: SearchViewProps) => {
       <StationConnection />
       <View style={styles.searchStations}>
         <SearchLocation
-          label={"From"}
+          label="From"
           borderBottom
           onFocus={() => props.onFocus && props.onFocus(ActiveInput.FROM)}
           onBlur={props.onBlur}
@@ -63,7 +64,7 @@ const SearchView = (props: SearchViewProps) => {
           textInputRef={props.fromRef}
         />
         <SearchLocation
-          label={"To"}
+          label="To"
           onBlur={props.onBlur}
           onFocus={() => props.onFocus && props.onFocus(ActiveInput.TO)}
           value={props.toValue}
@@ -159,7 +160,7 @@ const ResultView = ({
   setSearchValue,
   predefinedLocations,
 }: ResultViewProps) => {
-  const [searchResults, setSearchResults] = useState<Array<Location>>([]);
+  const [searchResults, setSearchResults] = useState<Location[]>([]);
   const backgroundColor = useBackground();
 
   const foreGround = useForeground();

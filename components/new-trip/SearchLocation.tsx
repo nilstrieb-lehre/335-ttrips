@@ -1,5 +1,6 @@
 import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
+
 import { useForeground } from "../../service/utils";
 
 type Props = {
