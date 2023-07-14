@@ -1,7 +1,5 @@
 import { StyleSheet } from "react-native";
-
-import EditScreenInfo from "../../components/EditScreenInfo";
-import { Text, View } from "../../components/Themed";
+import { View } from "../../components/Themed";
 import AccountSettings from "../../components/settings/AccountSettings";
 
 export default function TabTwoScreen() {

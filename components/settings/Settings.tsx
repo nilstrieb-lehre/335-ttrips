@@ -1,11 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import {
-  Button,
-  FlatList,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Button, FlatList, StyleSheet, View } from "react-native";
 import { UserCredential } from "firebase/auth";
 import { Text } from "../Themed";
 import { CredentialsContext, firebase } from "../../service/firebase";
