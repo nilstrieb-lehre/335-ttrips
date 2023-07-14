@@ -1,11 +1,11 @@
 # SBB-App
 
-- Für den User optionales Login mit Firebase
-- Speichern von Orten in Firebase
-- Mit Magnetometer die Richtung zum Bahnhof anzeigen
-- Wetter API integrieren
-  - Wetter am Zielort anzeigen
-  - Orte mit bestimmten Wetter anzeigen
+- Für den User optionales Login mit Firebase ✅
+- Speichern von Orten in Firebase ✅
+- Mit Magnetometer die Richtung zum Bahnhof anzeigen ✅
+- Wetter API integrieren ❌
+  - Wetter am Zielort anzeigen ❌
+  - Orte mit bestimmten Wetter anzeigen ❌
 
 ## Trips suchen und starten
 
@@ -30,6 +30,8 @@ eine Push-Notification, wenn man bald am Zielbahnhof ankommt.
 
 - [SBB API Beispiel](https://github.com/nilstrieb-lehre/java-frontend/blob/7be756328fad2aec5ecbe838c0dd86395f5f0bd8/5-fetching/src)
 - [Kompass Beispiel](https://github.com/rahulhaque/compass-react-native-expo/blob/1bc2d906012f1026ae00f96994834c82d63c4081/App.js)
-  ](https://github.com/nilstrieb-lehre/335-ttrips/blob/3e5f8367bad9a2f47303df5d87d51dcf088a4679/README.md)https://github.com/nilstrieb-lehre/335-ttrips/blob/3e5f8367bad9a2f47303df5d87d51dcf088a4679/README.md
 
 ## Zielsysteme
+
+Die App wurde für Android mit Dark Theme entwickelt, wurde aber auch erfolgreich mit dem
+light theme auf Android und beiden Themes auf iOS getestet.
