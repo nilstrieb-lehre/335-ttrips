@@ -1,10 +1,17 @@
-export function renderDate(d: number | string | Date): string {
+export function renderDate(
+  d: number | string | Date,
+  renderDate = true,
+): string {
   console.log(d);
   const date = new Date(d);
 
   const p = (n: number) => n.toString().padStart(2, "0");
 
-  return `${p(date.getDay())}.${p(date.getMonth())}.${date.getFullYear()} ${p(
-    date.getHours(),
-  )}:${p(date.getMinutes())}`;
+  const formattedDate = `${p(date.getDay())}.${p(
+    date.getMonth(),
+  )}.${date.getFullYear()}`;
+
+  return `${renderDate ? `${formattedDate} ` : ""}${p(date.getHours())}:${p(
+    date.getMinutes(),
+  )}`;
 }

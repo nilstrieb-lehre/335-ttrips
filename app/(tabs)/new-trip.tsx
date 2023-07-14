@@ -1,7 +1,5 @@
 import { StyleSheet } from "react-native";
-
-import EditScreenInfo from "../../components/EditScreenInfo";
-import { Text, View } from "../../components/Themed";
+import { View } from "../../components/Themed";
 import NewTrips from "../../components/new-trip/NewTrips";
 
 export default function NewTrip() {
@@ -17,6 +15,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    paddingHorizontal: 5,
   },
   title: {
     fontSize: 20,

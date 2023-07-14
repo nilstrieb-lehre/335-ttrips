@@ -1,62 +1,64 @@
-import React, { useState } from "react";
-import {
-  Button,
-  FlatList,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from "react-native";
-import { Text, TextInput } from "../Themed";
-import { Location, locations } from "../../service/transport";
+import React from "react";
+import { StyleSheet, TextInput, View } from "react-native";
+import { useThemeColor } from "../Themed";
+import Colors from "../../constants/Colors";
 
 type Props = {
-  setLocation: (location: string) => void;
+  label: string;
+  borderBottom?: boolean;
+  onFocus?: () => void;
+  onBlur?: () => void;
+  onLocationInput?: (e: string) => void;
+  value: string;
+  textInputRef?: React.RefObject<TextInput>;
 };
 
-const SearchLocation = ({ setLocation }: Props) => {
-  const [query, setQuery] = useState("");
-  const [stations, setStations] = useState<Location[]>([]);
-
-  const search = () => {
-    if (!query) {
-      return;
-    }
-    console.log("search");
-    locations({ query })
-      .then((res) => setStations(res.stations))
-      .catch(console.error);
-  };
+const SearchLocation = ({
+  label,
+  onBlur,
+  onFocus,
+  onLocationInput,
+  borderBottom = false,
+  value,
+  textInputRef,
+}: Props) => {
+  const searchStationForeground = useThemeColor(
+    { light: Colors.searchView.light.text, dark: Colors.searchView.dark.text },
+    "text",
+  );
 
   return (
     <View>
-      <TextInput style={styles.customInput} onChangeText={setQuery} />
-      <Button title="Search" onPress={search} />
-      <View style={styles.stations}>
-        {stations.length > 0 && (
-          <FlatList
-            data={stations}
-            renderItem={({ item }) => (
-              <View>
-                <TouchableOpacity onPress={() => setLocation(item.name)}>
-                  <Text>{item.name}</Text>
-                </TouchableOpacity>
-              </View>
-            )}
-          />
-        )}
-      </View>
+      <TextInput
+        style={[
+          styles.customInput,
+          borderBottom && styles.border,
+          { borderBottomColor: searchStationForeground },
+          { color: searchStationForeground },
+        ]}
+        onChangeText={onLocationInput}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        placeholder={label}
+        placeholderTextColor={searchStationForeground}
+        value={value}
+        ref={textInputRef}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   customInput: {
-    borderWidth: 1,
-    borderColor: "grey",
-    height: 40,
+    height: 50,
+    width: "90%",
+    paddingVertical: 15,
   },
   stations: {
     height: 50,
+  },
+  border: {
+    borderBottomWidth: 1,
   },
 });
 
