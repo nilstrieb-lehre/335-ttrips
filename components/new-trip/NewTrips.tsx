@@ -1,4 +1,3 @@
-import { Foundation, MaterialIcons } from "@expo/vector-icons";
 import React, {
   RefObject,
   useContext,
@@ -15,11 +14,10 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-
 import SearchLocation from "./SearchLocation";
+import { Text, useThemeColor } from "../Themed";
 import Colors from "../../constants/Colors";
-import debounce from "../../service/debounce";
-import { CredentialsContext, firebase } from "../../service/firebase";
+import { Foundation, MaterialIcons } from "@expo/vector-icons";
 import {
   Connection,
   connections as getConnections,
@@ -27,7 +25,16 @@ import {
   locations,
 } from "../../service/transport";
 import Connections from "../Connections";
-import { Text, useThemeColor } from "../Themed";
+import { CredentialsContext, firebase } from "../../service/firebase";
+import debounce from "../../service/debounce";
+import {
+  getCurrentPositionAsync,
+  LocationAccuracy,
+  LocationObject,
+  requestForegroundPermissionsAsync,
+  watchPositionAsync,
+} from "expo-location";
+import { router } from "expo-router";
 
 type SearchViewProps = {
   onFocus?: (el: ActiveInput) => void;
@@ -55,7 +62,7 @@ const SearchView = (props: SearchViewProps) => {
       <StationConnection />
       <View style={styles.searchStations}>
         <SearchLocation
-          label="From"
+          label={"From"}
           borderBottom
           onFocus={() => props.onFocus && props.onFocus(ActiveInput.FROM)}
           onBlur={props.onBlur}
@@ -64,7 +71,7 @@ const SearchView = (props: SearchViewProps) => {
           textInputRef={props.fromRef}
         />
         <SearchLocation
-          label="To"
+          label={"To"}
           onBlur={props.onBlur}
           onFocus={() => props.onFocus && props.onFocus(ActiveInput.TO)}
           value={props.toValue}
@@ -159,14 +166,14 @@ type ResultViewProps = {
   predefinedLocations: string[];
 };
 
-const searchCache = new Map<string, Location[]>();
+const searchCache = new Map<string, Array<Location>>();
 
 const ResultView = ({
   searchValue,
   setSearchValue,
   predefinedLocations,
 }: ResultViewProps) => {
-  const [searchResults, setSearchResults] = useState<Location[]>([]);
+  const [searchResults, setSearchResults] = useState<Array<Location>>([]);
   const backgroundColor = useThemeColor(
     {
       light: Colors.searchView.light.background,
@@ -195,10 +202,14 @@ const ResultView = ({
     <View style={[styles.resultView, { backgroundColor }]}>
       <ScrollView
         contentContainerStyle={{ alignItems: "center" }}
-        keyboardShouldPersistTaps="handled"
+        keyboardShouldPersistTaps={"handled"}
       >
         {searchValue.length === 0 && (
-          <ResultElement style={{ marginBottom: 35 }} hasIcon>
+          <ResultElement
+            style={{ marginBottom: 35 }}
+            onPress={() => setSearchValue("Current Location")}
+            hasIcon
+          >
             <MaterialIcons name="my-location" size={24} color={foreGround} />
             <Text style={{ marginLeft: 20 }}>Current Location</Text>
           </ResultElement>
@@ -256,10 +267,20 @@ const NewTrips = () => {
     return () => unsub();
   }, []);
 
+  useEffect(() => {
+    async function requestPermission() {
+      let { status } = await requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        router.replace("/");
+      }
+    }
+    requestPermission().then(() => console.log("watching location"));
+  }, []);
+
   const [activeElement, setActiveElement] = useState<ActiveInput | null>(null);
   const [fromValue, setFromValue] = useState("");
   const [toValue, setToValue] = useState("");
-  const [connections, setConnections] = useState<Connection[]>();
+  const [connections, setConnections] = useState<Array<Connection>>();
   const fromRef = useRef<TextInput>(null);
   const toRef = useRef<TextInput>(null);
 
@@ -272,7 +293,7 @@ const NewTrips = () => {
   };
   const handleSearchChange = debounce((val) => setSearchValue(val), 500);
 
-  const handleSelection = (val: string) => {
+  const handleSelection = async (val: string) => {
     const newFromVal = activeElement === ActiveInput.FROM ? val : fromValue;
     const newToVal = activeElement === ActiveInput.TO ? val : toValue;
     if (activeElement === ActiveInput.FROM) {
@@ -287,11 +308,31 @@ const NewTrips = () => {
     setActiveElement(null);
     if (newFromVal.length > 0 && newToVal.length > 0) {
       console.log("Fetching connections");
-      getConnections({ from: newFromVal, to: newToVal })
-        .then((connections) => setConnections(connections.connections))
-        .then(() => console.log("Fetched connections"))
-        .catch(console.error);
+      try {
+        const from =
+          newFromVal === "Current Location"
+            ? await findNearestStation()
+            : newFromVal;
+        const to =
+          newToVal === "Current Location"
+            ? await findNearestStation()
+            : newToVal;
+
+        await getConnections({ from, to })
+          .then((connections) => setConnections(connections.connections))
+          .then(() => console.log("Fetched connections"));
+      } catch (e) {
+        console.error(e);
+      }
     }
+  };
+
+  const findNearestStation = async (): Promise<string> => {
+    const location = await getCurrentPositionAsync();
+    return locations({
+      x: location.coords.longitude.toString(10),
+      y: location.coords.latitude.toString(10),
+    }).then((res) => res.stations[0].name);
   };
 
   const [searchValue, setSearchValue] = useState("");
