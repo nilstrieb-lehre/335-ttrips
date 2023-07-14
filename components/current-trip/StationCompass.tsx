@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Dimensions, Image, StyleSheet } from "react-native";
 import { Magnetometer, MagnetometerMeasurement } from "expo-sensors";
-import { View } from "../Themed";
+import { Text, View } from "../Themed";
 import { Subscription } from "expo-sensors/src/DeviceSensor";
 import * as Location from "expo-location";
 import { LocationObject, LocationSubscription } from "expo-location";
@@ -84,7 +84,7 @@ const StationCompass = ({ nextStation }: Props) => {
   return (
     <View>
       {errorMessage ? (
-        errorMessage
+        <Text>errorMessage</Text>
       ) : (
         <View style={styles.container}>
           <Image

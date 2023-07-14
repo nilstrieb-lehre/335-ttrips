@@ -10,16 +10,16 @@ const TripProgress = ({ currentTrip }: { currentTrip: Connection }) => {
     tripToStopStations(currentTrip),
   );
 
-  console.log(currentPosition);
-
   useEffect(() => {
+    setStations(tripToStopStations(currentTrip));
+
     const timer = setInterval(
       () => setStations(tripToStopStations(currentTrip)),
       10_000,
     );
 
     return () => clearInterval(timer);
-  });
+  }, [currentTrip, setStations]);
 
   return (
     <ScrollView style={styles.container}>
