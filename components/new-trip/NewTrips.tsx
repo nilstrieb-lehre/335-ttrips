@@ -26,19 +26,7 @@ import {
 } from "../../service/transport";
 import Connections from "../Connections";
 import { CredentialsContext, firebase } from "../../service/firebase";
-
-function debounce<T>(
-  cb: (...args: any) => void,
-  delay = 250,
-): (args: T) => void {
-  let timeout: any;
-  return (...args) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => {
-      cb(...args);
-    }, delay);
-  };
-}
+import debounce from "../../service/debounce";
 
 type SearchViewProps = {
   onFocus?: (el: ActiveInput) => void;
@@ -281,7 +269,6 @@ const NewTrips = () => {
 
     setActiveElement(ae);
   };
-
   const handleSearchChange = debounce((val) => setSearchValue(val), 500);
 
   const handleSelection = (val: string) => {
