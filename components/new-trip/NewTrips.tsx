@@ -253,7 +253,7 @@ const NewTrips = () => {
       : () => {};
 
     return () => unsub();
-  });
+  }, []);
 
   const [activeElement, setActiveElement] = useState<ActiveInput | null>(null);
   const [fromValue, setFromValue] = useState("");

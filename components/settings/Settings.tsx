@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Button,
   FlatList,
@@ -8,15 +8,16 @@ import {
 } from "react-native";
 import { UserCredential } from "firebase/auth";
 import { Text } from "../Themed";
-import { firebase } from "../../service/firebase";
+import { CredentialsContext, firebase } from "../../service/firebase";
 
 const Settings = ({ credentials }: { credentials: UserCredential }) => {
+  const { setCredentials } = useContext(CredentialsContext);
   const [locations, setLocations] = useState<string[]>([]);
 
   useEffect(() => {
     const unsub = firebase.listenLocations(credentials.user.uid, setLocations);
     return () => unsub();
-  });
+  }, []);
 
   const addLocation = () => {};
 
@@ -35,6 +36,7 @@ const Settings = ({ credentials }: { credentials: UserCredential }) => {
           </View>
         )}
       />
+      <Button title="Logout" onPress={() => setCredentials(null)} />
     </View>
   );
 };

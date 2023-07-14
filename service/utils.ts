@@ -2,7 +2,6 @@ export function renderDate(
   d: number | string | Date,
   renderDate = true,
 ): string {
-  console.log(d);
   const date = new Date(d);
 
   const p = (n: number) => n.toString().padStart(2, "0");
