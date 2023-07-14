@@ -67,7 +67,7 @@ class FirebaseService {
     onChange: (loc: string[]) => void,
   ): Unsubscribe {
     const loc = ref(this.database, `/users/${uid}/locations`);
-    return onValue(loc, (snapshot) => onChange(snapshot.val()));
+    return onValue(loc, (snapshot) => onChange(snapshot.val() ?? []));
   }
 
   public setLocations(uid: string, locations: string[]): Promise<void> {
