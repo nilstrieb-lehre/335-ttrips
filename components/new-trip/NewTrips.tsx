@@ -1,4 +1,10 @@
-import React, { RefObject, useEffect, useRef, useState } from "react";
+import React, {
+  RefObject,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import {
   ScrollView,
   StyleProp,
@@ -19,8 +25,7 @@ import {
   locations,
 } from "../../service/transport";
 import Connections from "../Connections";
-
-const testLocations = ["Winterthur", "Schaffhausen", "Lohn", "Bern"];
+import { CredentialsContext, firebase } from "../../service/firebase";
 
 function debounce<T>(
   cb: (...args: any) => void,
@@ -162,11 +167,16 @@ const ResultElement = ({
 type ResultViewProps = {
   searchValue: string;
   setSearchValue: (val: string) => void;
+  predefinedLocations: string[];
 };
 
 const searchCache = new Map<string, Array<Location>>();
 
-const ResultView = ({ searchValue, setSearchValue }: ResultViewProps) => {
+const ResultView = ({
+  searchValue,
+  setSearchValue,
+  predefinedLocations,
+}: ResultViewProps) => {
   const [searchResults, setSearchResults] = useState<Array<Location>>([]);
   const backgroundColor = useThemeColor(
     {
@@ -205,7 +215,7 @@ const ResultView = ({ searchValue, setSearchValue }: ResultViewProps) => {
           </ResultElement>
         )}
 
-        {testLocations
+        {predefinedLocations
           .filter(
             (val) =>
               val.toLowerCase().includes(searchValue.toLowerCase()) ||
@@ -217,7 +227,9 @@ const ResultView = ({ searchValue, setSearchValue }: ResultViewProps) => {
               hasIcon
               withTopBorder={index === 0}
               onPress={() => setSearchValue(item)}
-              style={index === testLocations.length - 1 && { marginBottom: 35 }}
+              style={
+                index === predefinedLocations.length - 1 && { marginBottom: 35 }
+              }
             >
               <Foundation name="star" size={24} color={foreGround} />
               <Text style={{ marginLeft: 20 }}>{item}</Text>
@@ -244,6 +256,17 @@ enum ActiveInput {
 }
 
 const NewTrips = () => {
+  const [predefinedLocations, setPredefinedLocations] = useState<string[]>([]);
+  const { credentials } = useContext(CredentialsContext);
+
+  useEffect(() => {
+    const unsub = credentials
+      ? firebase.listenLocations(credentials.user.uid, setPredefinedLocations)
+      : () => {};
+
+    return () => unsub();
+  });
+
   const [activeElement, setActiveElement] = useState<ActiveInput | null>(null);
   const [fromValue, setFromValue] = useState("");
   const [toValue, setToValue] = useState("");
@@ -307,6 +330,7 @@ const NewTrips = () => {
         <ResultView
           searchValue={searchValue}
           setSearchValue={handleSelection}
+          predefinedLocations={predefinedLocations}
         />
       )}
       {connections && activeElement == null && (
