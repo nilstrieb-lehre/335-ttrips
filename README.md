@@ -1,4 +1,6 @@
-# SBB-App
+# <img src="./docs/store-media/logo.png" style="height: 30px"> EasyTravel
+
+![google_play_example.png](docs/store-media/google_play_example.png)
 
 - Für den User optionales Login mit Firebase ✅
 - Speichern von Orten in Firebase ✅
