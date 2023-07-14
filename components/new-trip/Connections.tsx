@@ -1,36 +1,26 @@
 import { router } from "expo-router";
 import React, { useState } from "react";
 import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
-
-import Colors from "../../constants/Colors";
 import { Connection, Section } from "../../service/transport";
 import useCurrentTrip from "../../service/use-current-trip";
-import { renderDate } from "../../service/utils";
-import { Text, useThemeColor } from "../Themed";
+import { renderDate, useBackground, useForeground } from "../../service/utils";
+import { Text } from "../Themed";
 
 type ConnectionsProps = {
   data: Connection[];
 };
 
 const Connections = ({ data }: ConnectionsProps) => {
-  const searchStationBackground = useThemeColor(
-    {
-      light: Colors.searchView.light.background,
-      dark: Colors.searchView.dark.background,
-    },
-    "background",
-  );
+  const searchStationBackground = useBackground();
 
-  const searchStationForeground = useThemeColor(
-    { light: Colors.searchView.light.text, dark: Colors.searchView.dark.text },
-    "text",
-  );
+  const searchStationForeground = useForeground();
   const { setCurrentTrip } = useCurrentTrip();
   const [{ width }, setDimension] = useState({ width: 0, height: 0 });
 
   const renderItem = ({ item }: { item: Connection }) => {
-    const from = renderDate(item.from.departure!, false);
-    const to = renderDate(item.to.arrival!, false);
+    const sectionsWithoutWalk = item.sections.filter((val) => val.walk == null);
+    const from = renderDate(item.from.departure!, true);
+    const to = renderDate(item.to.arrival!, true);
 
     const duration = item.duration.substring(3).split(":");
     const durationHours = parseInt(duration[0], 10);
@@ -41,10 +31,10 @@ const Connections = ({ data }: ConnectionsProps) => {
 
     const hourFormatted = durationHours > 0 ? `${durationHours}hrs ` : "";
 
-    const startDate = new Date(item.sections[0].departure.departure!).getTime();
+    const startDate = new Date(item.from.departure!).getTime();
 
     const totalDurationOfTrip =
-      new Date(item.sections.at(-1)?.arrival.arrival!).getTime() - startDate;
+      new Date(item.to.arrival!).getTime() - startDate;
 
     const mapPointToPosition = (item: Section) => {
       const arrival = new Date(item.arrival.arrival!).getTime();
@@ -52,7 +42,6 @@ const Connections = ({ data }: ConnectionsProps) => {
       return width * percentage;
     };
 
-    const sectionsWithoutWalk = item.sections.filter((val) => val.walk == null);
     const points: React.ReactNode[] = sectionsWithoutWalk
       .slice(0, sectionsWithoutWalk.length - 1)
       .map(mapPointToPosition)

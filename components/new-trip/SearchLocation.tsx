@@ -1,8 +1,6 @@
 import React from "react";
 import { StyleSheet, TextInput, View } from "react-native";
-
-import Colors from "../../constants/Colors";
-import { useThemeColor } from "../Themed";
+import { useForeground } from "../../service/utils";
 
 type Props = {
   label: string;
@@ -23,10 +21,7 @@ const SearchLocation = ({
   value,
   textInputRef,
 }: Props) => {
-  const searchStationForeground = useThemeColor(
-    { light: Colors.searchView.light.text, dark: Colors.searchView.dark.text },
-    "text",
-  );
+  const searchStationForeground = useForeground();
 
   return (
     <View>

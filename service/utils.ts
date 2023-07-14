@@ -1,3 +1,6 @@
+import { useThemeColor } from "../components/Themed";
+import Colors from "../constants/Colors";
+
 export function renderDate(
   d: number | string | Date,
   timeOnly = false,
@@ -13,4 +16,21 @@ export function renderDate(
   return `${timeOnly ? "" : `${formattedDate} `}${p(date.getHours())}:${p(
     date.getMinutes(),
   )}`;
+}
+
+export function useForeground(): string {
+  return useThemeColor(
+    { light: Colors.searchView.light.text, dark: Colors.searchView.dark.text },
+    "text",
+  );
+}
+
+export function useBackground(): string {
+  return useThemeColor(
+    {
+      light: Colors.searchView.light.background,
+      dark: Colors.searchView.dark.background,
+    },
+    "background",
+  );
 }

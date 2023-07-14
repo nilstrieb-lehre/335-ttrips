@@ -1,8 +1,6 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { UserCredential } from "firebase/auth";
 import React, { useContext, useEffect, useState } from "react";
 import {
-  Button,
   Dimensions,
   FlatList,
   StyleSheet,
@@ -14,16 +12,52 @@ import {
 import Colors from "../../constants/Colors";
 import { CredentialsContext, firebase } from "../../service/firebase";
 import { Text, TextInput } from "../Themed";
+import sharedStyles from "../../constants/sharedStyles";
+import { useBackground } from "../../service/utils";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 const { width } = Dimensions.get("window");
+
+type LocationProps = {
+  filled: boolean;
+  name: string;
+  onPress: () => void;
+};
+
+const Location = ({ filled, name, onPress }: LocationProps) => {
+  const backgroundColor = useBackground();
+  const colorScheme = useColorScheme();
+  return (
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.locationItem, { backgroundColor }]}
+    >
+      {filled ? (
+        <FontAwesome
+          name="star"
+          size={24}
+          color={Colors[colorScheme ?? "light"].text}
+        />
+      ) : (
+        <FontAwesome
+          name="star-o"
+          size={24}
+          color={Colors[colorScheme ?? "light"].text}
+        />
+      )}
+      <Text style={styles.locationText}>{name}</Text>
+    </TouchableOpacity>
+  );
+};
 
 const Settings = ({ credentials }: { credentials: UserCredential }) => {
   const { setCredentials } = useContext(CredentialsContext);
   const [locations, setLocations] = useState<string[]>([]);
   const [newLocation, setNewLocation] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [searchModeActive, setSearchModeActive] = useState(false);
 
-  const colorScheme = useColorScheme();
+  const backgroundColor = useBackground();
 
   useEffect(() => {
     const unsub = firebase.listenLocations(credentials.user.uid, setLocations);
@@ -51,38 +85,39 @@ const Settings = ({ credentials }: { credentials: UserCredential }) => {
       .catch(() => setError("An error occurred when removing the location"));
   };
 
+  const renderLocation = ({ item, index }: { item: string; index: number }) => (
+    <Location filled={true} name={item} onPress={() => removeLocation(index)} />
+  );
+
   return (
     <View style={styles.container}>
-      <Text>Logged in as {credentials.user.email}</Text>
+      <View style={styles.loginView}>
+        <Text>Logged in as {credentials.user.email}</Text>
+        <TouchableOpacity onPress={() => setCredentials(null)}>
+          <Text style={styles.logoutText}>Logout</Text>
+        </TouchableOpacity>
+      </View>
       <View style={styles.locations}>
         <View>
           <TextInput
             value={newLocation}
+            onFocus={() => setSearchModeActive(true)}
+            onBlur={() => setSearchModeActive(false)}
             onChangeText={setNewLocation}
             accessibilityLabel="Add new Location"
-            style={styles.locationInput}
+            style={[sharedStyles.input, { width: "100%" }]}
           />
-          <Button title="Add new" onPress={addLocation} />
           {error && <Text>{error}</Text>}
         </View>
-        <FlatList
-          data={locations}
-          renderItem={({ item, index }) => (
-            <View style={styles.locationItem}>
-              <Text>{item}</Text>
-              <TouchableOpacity onPress={() => removeLocation(index)}>
-                <FontAwesome
-                  size={40}
-                  name="trash"
-                  color={Colors[colorScheme ?? "light"].text}
-                />
-              </TouchableOpacity>
-            </View>
-          )}
-        />
-      </View>
-      <View style={styles.footer}>
-        <Button title="Logout" onPress={() => setCredentials(null)} />
+
+        {!searchModeActive && (
+          <>
+            <Text style={[sharedStyles.title, { marginTop: 15 }]}>
+              Saved locations
+            </Text>
+            <FlatList data={locations} renderItem={renderLocation} />
+          </>
+        )}
       </View>
     </View>
   );
@@ -91,6 +126,8 @@ const Settings = ({ credentials }: { credentials: UserCredential }) => {
 const styles = StyleSheet.create({
   container: {
     marginTop: 50,
+    minWidth: "80%",
+    flex: 1,
   },
   locations: {
     paddingTop: 10,
@@ -103,12 +140,12 @@ const styles = StyleSheet.create({
     padding: 3,
   },
   locationItem: {
-    paddingTop: 5,
-    paddingBottom: 5,
+    padding: 15,
+    marginVertical: 5,
+    borderRadius: 5,
     flex: 1,
     flexDirection: "row",
-    justifyContent: "space-between",
-    width: 0.8 * width,
+    width: "100%",
     alignItems: "center",
   },
   footer: {
@@ -116,6 +153,18 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     borderTopWidth: 1,
     borderTopColor: "grey",
+  },
+  loginView: {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  logoutText: {
+    color: "#0345fc",
+  },
+  locationText: {
+    marginLeft: 35,
   },
 });
 

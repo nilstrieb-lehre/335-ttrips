@@ -1,14 +1,17 @@
 import React, { useContext, useState } from "react";
-import { Button, StyleSheet, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 
 import { CredentialsContext, firebase } from "../../service/firebase";
 import { Text, TextInput } from "../Themed";
+import { useBackground } from "../../service/utils";
+import sharedStyles from "../../constants/sharedStyles";
 
 const Login = () => {
   const { setCredentials } = useContext(CredentialsContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const backgroundColor = useBackground();
 
   const login = () => {
     if (email && password) {
@@ -22,30 +25,48 @@ const Login = () => {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
+      <Text style={sharedStyles.title}>Account</Text>
       <Text>E-Mail</Text>
       <TextInput
         value={email}
         onChangeText={setEmail}
+        autoCapitalize={"none"}
         accessibilityLabel="Email input"
+        style={sharedStyles.input}
       />
       <Text>Password</Text>
       <TextInput
         value={password}
         onChangeText={setPassword}
         accessibilityLabel="Password input"
+        style={sharedStyles.input}
         secureTextEntry
       />
       <View>
-        <Button onPress={login} title="Login" />
-        <Button onPress={createUser} title="Create account" />
+        <TouchableOpacity
+          onPress={login}
+          style={[sharedStyles.button, { backgroundColor }]}
+        >
+          <Text>Login</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={createUser}
+          style={[sharedStyles.button, { backgroundColor }]}
+        >
+          <Text>Create account</Text>
+        </TouchableOpacity>
       </View>
       {errorMessage && <Text>{errorMessage}</Text>}
     </View>
   );
 };
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    display: "flex",
+    justifyContent: "center",
+  },
+});
 
 export default Login;

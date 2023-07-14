@@ -1,9 +1,3 @@
-import { Foundation, MaterialIcons } from "@expo/vector-icons";
-import {
-  getCurrentPositionAsync,
-  requestForegroundPermissionsAsync,
-} from "expo-location";
-import { router } from "expo-router";
 import React, {
   RefObject,
   useContext,
@@ -20,19 +14,25 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-
-import Connections from "./Connections";
 import SearchLocation from "./SearchLocation";
-import Colors from "../../constants/Colors";
-import debounce from "../../service/debounce";
-import { CredentialsContext, firebase } from "../../service/firebase";
+import { Text } from "../Themed";
+import { MaterialIcons } from "@expo/vector-icons";
 import {
   Connection,
   connections as getConnections,
   Location,
   locations,
 } from "../../service/transport";
-import { Text, useThemeColor } from "../Themed";
+import Connections from "./Connections";
+import { CredentialsContext, firebase } from "../../service/firebase";
+import debounce from "../../service/debounce";
+import {
+  getCurrentPositionAsync,
+  requestForegroundPermissionsAsync,
+} from "expo-location";
+import { router } from "expo-router";
+import { useBackground, useForeground } from "../../service/utils";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 type SearchViewProps = {
   onFocus?: (el: ActiveInput) => void;
@@ -45,13 +45,7 @@ type SearchViewProps = {
   toRef?: RefObject<TextInput>;
 };
 const SearchView = (props: SearchViewProps) => {
-  const searchStationBackground = useThemeColor(
-    {
-      light: Colors.searchView.light.background,
-      dark: Colors.searchView.dark.background,
-    },
-    "background",
-  );
+  const searchStationBackground = useBackground();
 
   return (
     <View
@@ -60,7 +54,7 @@ const SearchView = (props: SearchViewProps) => {
       <StationConnection />
       <View style={styles.searchStations}>
         <SearchLocation
-          label="From"
+          label={"From"}
           borderBottom
           onFocus={() => props.onFocus && props.onFocus(ActiveInput.FROM)}
           onBlur={props.onBlur}
@@ -69,7 +63,7 @@ const SearchView = (props: SearchViewProps) => {
           textInputRef={props.fromRef}
         />
         <SearchLocation
-          label="To"
+          label={"To"}
           onBlur={props.onBlur}
           onFocus={() => props.onFocus && props.onFocus(ActiveInput.TO)}
           value={props.toValue}
@@ -82,10 +76,7 @@ const SearchView = (props: SearchViewProps) => {
 };
 
 const StationConnection = () => {
-  const searchStationForeground = useThemeColor(
-    { light: Colors.searchView.light.text, dark: Colors.searchView.dark.text },
-    "text",
-  );
+  const searchStationForeground = useForeground();
 
   return (
     <View style={styles.stationView}>
@@ -125,10 +116,7 @@ const ResultElement = ({
   hasIcon?: boolean;
   onPress?: () => void;
 }) => {
-  const borderColor = useThemeColor(
-    { light: Colors.searchView.light.text, dark: Colors.searchView.dark.text },
-    "text",
-  );
+  const borderColor = useForeground();
 
   return (
     <TouchableOpacity
@@ -171,19 +159,10 @@ const ResultView = ({
   setSearchValue,
   predefinedLocations,
 }: ResultViewProps) => {
-  const [searchResults, setSearchResults] = useState<Location[]>([]);
-  const backgroundColor = useThemeColor(
-    {
-      light: Colors.searchView.light.background,
-      dark: Colors.searchView.dark.background,
-    },
-    "background",
-  );
+  const [searchResults, setSearchResults] = useState<Array<Location>>([]);
+  const backgroundColor = useBackground();
 
-  const foreGround = useThemeColor(
-    { light: Colors.searchView.light.text, dark: Colors.searchView.dark.text },
-    "text",
-  );
+  const foreGround = useForeground();
 
   useEffect(() => {
     const cacheHit = searchCache.get(searchValue);
@@ -229,7 +208,7 @@ const ResultView = ({
                 index === predefinedLocations.length - 1 && { marginBottom: 35 }
               }
             >
-              <Foundation name="star" size={24} color={foreGround} />
+              <FontAwesome name="star" size={24} color={foreGround} />
               <Text style={{ marginLeft: 20 }}>{item}</Text>
             </ResultElement>
           ))}
@@ -430,6 +409,9 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
     paddingTop: 25,
+  },
+  locationText: {
+    marginLeft: 25,
   },
 });
 
