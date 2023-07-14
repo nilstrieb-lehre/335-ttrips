@@ -36,3 +36,9 @@ zu finden.
 
 Wir verwenden die OpenData Transport API für die SBB-Integration. Ausserdem verwenden
 wir Firebase für das Login-System und das Speichern der Settings.
+
+## Implementation
+
+2 Kontexts für current trip und user credentials. Für die 3 Tabs
+jeweils separate Komponenten. Die predefined locations sind über die
+Firebase Realtime Database synchronisiert.
