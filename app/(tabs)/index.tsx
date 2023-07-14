@@ -1,13 +1,12 @@
-import { StyleSheet } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 
-import { View } from "../../components/Themed";
 import CurrentTrip from "../../components/current-trip/CurrentTrip";
 
 export default function TabOneScreen() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <CurrentTrip />
-    </View>
+    </SafeAreaView>
   );
 }
 

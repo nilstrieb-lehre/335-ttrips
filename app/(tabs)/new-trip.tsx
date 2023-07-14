@@ -1,13 +1,12 @@
-import { StyleSheet } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 
-import { View } from "../../components/Themed";
 import NewTrips from "../../components/new-trip/NewTrips";
 
 export default function NewTrip() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <NewTrips />
-    </View>
+    </SafeAreaView>
   );
 }
 

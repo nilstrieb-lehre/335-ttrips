@@ -1,13 +1,12 @@
-import { StyleSheet } from "react-native";
+import { SafeAreaView, StyleSheet } from "react-native";
 
-import { View } from "../../components/Themed";
 import AccountSettings from "../../components/settings/AccountSettings";
 
 export default function TabTwoScreen() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <AccountSettings />
-    </View>
+    </SafeAreaView>
   );
 }
 
